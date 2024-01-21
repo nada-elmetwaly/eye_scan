@@ -1,6 +1,8 @@
 import 'package:eye_scan/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'dynamicPage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home:  HomeScreen(),
+      home:  DynamicPage(),
     );
   }
 }
