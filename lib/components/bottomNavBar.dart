@@ -1,7 +1,7 @@
-
-import 'package:flutter/material.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 class MyNavBar extends StatelessWidget {
   void Function(int)? onTabChange;
   MyNavBar({super.key,required this.onTabChange});
@@ -13,25 +13,42 @@ class MyNavBar extends StatelessWidget {
       backgroundColor: Colors.white,
       animationDuration: Duration(microseconds: 300),
       items: [
+
         CurvedNavigationBarItem(
-          child: Icon(Icons.home_outlined,color: Colors.white,),
+          child:PhosphorIcon(
+            PhosphorIcons.house(),
+            color: Colors.white,
+            size:30,
+          ),
           label: 'Home',
-            labelStyle: TextStyle(color: Colors.white,),
+            labelStyle: TextStyle(color: Colors.white,)
         ),
         CurvedNavigationBarItem(
-          child: Icon(Icons.search,color: Colors.white,),
+          child: PhosphorIcon(
+    PhosphorIcons.magnifyingGlass(),
+            color: Colors.white,
+            size:30,
+    ),
           label: 'Search',
           labelStyle: TextStyle(color: Colors.white,)
         ),
         CurvedNavigationBarItem(
-          child: Icon(Icons.tips_and_updates_outlined,color: Colors.white,),
-          label: 'Tips',
+          child: PhosphorIcon(
+            PhosphorIcons.chatCircleDots(),
+            color: Colors.white,
+            size:30,
+          ),
+          label: 'Chat',
             labelStyle: TextStyle(color: Colors.white,)
         ),
         CurvedNavigationBarItem(
-          child: Icon(Icons.mark_unread_chat_alt_outlined,color: Colors.white,),
-          label: 'Chat',
-            labelStyle: TextStyle(color: Colors.white,),
+          child: PhosphorIcon(
+            PhosphorIcons.userCircleGear(),
+            color: Colors.white,
+            size:30,
+          ),
+          label: 'Profile',
+            labelStyle: TextStyle(color: Colors.white,)
         ),
 
 

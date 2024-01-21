@@ -29,12 +29,9 @@ class _DynamicPageState extends State<DynamicPage> {
       HomeScreen(),
       //search screen
       SearchScreen(),
-      //tips screen
-      tipsScreen(),
 
       //chat screen
       ChatScreen(),
-
 
       //profile screen
       ProfileScreen(),
