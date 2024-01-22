@@ -25,6 +25,7 @@ class _DynamicPageState extends State<DynamicPage> {
     }
     //pages
     final List<Widget> _pages=[
+      
       //home screen
       HomeScreen(),
       //search screen
