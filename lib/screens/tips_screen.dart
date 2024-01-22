@@ -48,7 +48,7 @@ class tipsScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TipComponent(img: 'assetes/anatomy.png',width: 134,height: 134,),
+              TipComponent(img: 'assetes/hg.jpg',width: 134,height: 134,),
               SizedBox(width: 30,),
               TipComponent(img: 'assetes/mayob.png',width: 134,height: 134,),
             ],
