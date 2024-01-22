@@ -60,7 +60,7 @@ class _TestState extends State<Test> {
               PhosphorIcons.lightbulb(),
               color: page == 2 ? Color(0xff73B8EB) : Colors.white,
             ),
-            label: 'Chat',
+            label: 'Tips',
           ),
           CurvedNavigationBarItem(
             labelStyle: const TextStyle(color: Colors.white),
@@ -68,7 +68,7 @@ class _TestState extends State<Test> {
               PhosphorIcons.chatCircleDots(),
               color: page == 3 ? Color(0xff73B8EB) : Colors.white,
             ),
-            label: 'Feed',
+            label: 'Chat',
           ),
           CurvedNavigationBarItem(
             labelStyle: const TextStyle(color: Colors.white),
@@ -76,7 +76,7 @@ class _TestState extends State<Test> {
               PhosphorIcons.userCircleGear(),
               color: page == 4 ?Color(0xff73B8EB) : Colors.white,
             ),
-            label: 'Personal',
+            label: 'Profile',
           ),
         ],
         color:Color(0xff73B8EB) ,
