@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  const CustomButton({super.key , required this.text});
+  final VoidCallback onPressed ;
+  const CustomButton({super.key , required this.text , required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor:
             MaterialStateProperty.all(Color(0xff75C2F6)),
         padding: MaterialStateProperty.all(
-            EdgeInsets.symmetric(horizontal: 135, vertical: 15)),
+            EdgeInsets.symmetric(horizontal: 100, vertical: 15)),
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16))),
       ),
