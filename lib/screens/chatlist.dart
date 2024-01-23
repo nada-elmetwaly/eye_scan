@@ -1,6 +1,15 @@
+import 'package:eye_scan/components/StoryItem.dart';
+import 'package:eye_scan/components/chatItem.dart';
+import 'package:eye_scan/components/custom_field.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MassengerScreeen extends StatelessWidget {
+class ChatList extends StatefulWidget {
+  @override
+  State<ChatList> createState() => _ChatListState();
+}
+
+class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,213 +18,182 @@ class MassengerScreeen extends StatelessWidget {
         titleSpacing: 20,
         backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Row(
-          children: [
-            CircleAvatar(
-              radius: 25,
-              backgroundImage: NetworkImage(
-                  'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              'Chats',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: Icon(
-                Icons.camera_alt,
-                size: 16,
-              ),
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: Icon(
-                Icons.edit,
-                size: 16,
-              ),
-            ),
-          )
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.grey[300],
-                ),
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.search,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text('Search')
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Container(
-                height: 100,
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return buildStoryItem();
-                    },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(width: 20);
-                    },
-                    itemCount: 30),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return buildChatItem();
-                },
-                itemCount: 60,
-                separatorBuilder: (context, index) {
-                  return const SizedBox(
-                    height: 20,
-                  );
-                },
-              ),
-            ],
+        centerTitle: true,
+        title: Text(
+          'Chats',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildStoryItem() {
-    return Row(
-      children: [
-        SizedBox(
-          width: 60.0,
-          child: Column(
-            children: [
-              Stack(
-                alignment: AlignmentDirectional.bottomEnd,
-                children: const [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: NetworkImage(
-                        'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 7.5,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                    radius: 7,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              const Text(
-                'Mohamed gehad elnenaa',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget buildChatItem() {
-    return Row(
-      children: [
-        Stack(
-          alignment: Alignment.bottomRight,
-          children: const [
-            CircleAvatar(
-              radius: 30,
-              backgroundImage: NetworkImage(
-                  'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
-            ),
-            CircleAvatar(
-              radius: 7.5,
-              backgroundColor: Colors.white,
-            ),
-            CircleAvatar(
-              radius: 7,
-              backgroundColor: Colors.green,
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Mohamed elneanaa',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Row(
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Hello my name mohamed',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  SizedBox(
+                    height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Container(
-                      width: 7,
-                      height: 7,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle,
+                  Container(
+                    width: 400,
+                    height: 55,
+                    child: Card(
+                      elevation: 1,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.mic_none_outlined,
+                                  size: 28,
+                                  color: Color(0xff73B8EB),
+                                ),
+                              ),
+                            ],
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          prefixIcon: IconButton(
+                            onPressed: () {
+                              ;
+                            },
+                            icon: Icon(
+                              Icons.search,
+                              color: Color(0xff979797),
+                            ),
+                          ),
+                          label: Text(
+                            'Search',
+                            style: TextStyle(color: Color(0xff979797)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  Text('02.00 PM')
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      bottom: 5,
+                      left: 10,
+                    ),
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: Color(0xFF73B8EB),
+                      width: 2,
+                    ))),
+                    child: Text(
+                      "Active Now",
+                      style: TextStyle(
+                        color: Color(0xFF333333),
+                        fontSize: 20,
+                        fontFamily: 'Baloo Bhai 2',
+                        fontWeight: FontWeight.bold,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: ListView.separated(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return StoryItem();
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(width: 20);
+                        },
+                        itemCount: 30),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      bottom: 5,
+                      left: 10,
+                    ),
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: Color(0xFF73B8EB),
+                      width: 2.0,
+                    ))),
+                    child: Text(
+                      "Messages",
+                      style: TextStyle(
+                        color: Color(0xFF333333),
+                        fontSize: 20,
+                        fontFamily: 'Baloo Bhai 2',
+                        fontWeight: FontWeight.bold,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return ChatItem();
+                      },
+                      itemCount: 60,
+                      separatorBuilder: (context, index) => Divider(),
+                    ),
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
-        )
-      ],
+          Positioned(
+            top:570,
+              left: 330,
+              child: InkWell(
+                onTap: (){},
+                child: Image(
+                  width: 50,
+                    height: 50,
+                    image: AssetImage('assetes/message-add.png')
+                ),
+              )
+          )
+        ],
+      ),
     );
   }
+
+
+
+
 }
