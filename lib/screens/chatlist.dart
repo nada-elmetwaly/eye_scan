@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class MassengerScreeen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,11 +9,12 @@ class MassengerScreeen extends StatelessWidget {
         titleSpacing: 20,
         backgroundColor: Colors.white,
         elevation: 0.0,
-          title: Row(
+        title: Row(
           children: [
             CircleAvatar(
               radius: 25,
-              backgroundImage: NetworkImage('https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
+              backgroundImage: NetworkImage(
+                  'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
             ),
             SizedBox(
               width: 10,
@@ -31,18 +31,17 @@ class MassengerScreeen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: (){},
-              icon: const CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Icon(
-                    Icons.camera_alt,
-                  size: 16,
-                ),
+            onPressed: () {},
+            icon: const CircleAvatar(
+              backgroundColor: Colors.blue,
+              child: Icon(
+                Icons.camera_alt,
+                size: 16,
               ),
-
+            ),
           ),
           IconButton(
-            onPressed: (){},
+            onPressed: () {},
             icon: const CircleAvatar(
               backgroundColor: Colors.blue,
               child: Icon(
@@ -50,11 +49,9 @@ class MassengerScreeen extends StatelessWidget {
                 size: 16,
               ),
             ),
-
           )
-
         ],
-      ),//بنعطى ال title space نفس مقاس ال padding بتاع ال column الى فى الbody عشان يبقوا مساووين لبعض
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
@@ -85,19 +82,15 @@ class MassengerScreeen extends StatelessWidget {
               Container(
                 height: 100,
                 child: ListView.separated(
-
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                    itemBuilder:(context,index)
-                    {
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
                       return buildStoryItem();
                     },
-                    separatorBuilder: (context,index)
-                    {
+                    separatorBuilder: (context, index) {
                       return SizedBox(width: 20);
                     },
-                    itemCount:30
-                ),
+                    itemCount: 30),
               ),
               const SizedBox(
                 height: 15,
@@ -105,22 +98,16 @@ class MassengerScreeen extends StatelessWidget {
               ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                  itemBuilder:(context,index)
-                  {
-                    return buildChatItem();
-                  },
+                itemBuilder: (context, index) {
+                  return buildChatItem();
+                },
                 itemCount: 60,
-                separatorBuilder: (context,index)
-                {
+                separatorBuilder: (context, index) {
                   return const SizedBox(
                     height: 20,
                   );
                 },
-
-
-
-              ),//ممكن نعملها arrow function عشان هى بترجعلنا عنصر واحد او object واحد
-              //ممكن نعملها arrow function عشان هى بترجعلنا عنصر واحد او object واحد
+              ),
             ],
           ),
         ),
@@ -128,10 +115,8 @@ class MassengerScreeen extends StatelessWidget {
     );
   }
 
-
-  Widget buildStoryItem()// ممكن نعملها arrow function عشان هى بترجعلنا عنصر واحد او object واحد
-  {
-    return  Row(
+  Widget buildStoryItem() {
+    return Row(
       children: [
         SizedBox(
           width: 60.0,
@@ -142,19 +127,22 @@ class MassengerScreeen extends StatelessWidget {
                 children: const [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: NetworkImage('https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
+                    backgroundImage: NetworkImage(
+                        'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
                   ),
                   CircleAvatar(
                     backgroundColor: Colors.white,
-                    radius:7.5  ,
-                  ),//ممكن نعمل padding عشان نحرك الدايرة
+                    radius: 7.5,
+                  ),
                   CircleAvatar(
                     backgroundColor: Colors.green,
-                    radius:7  ,
+                    radius: 7,
                   ),
                 ],
               ),
-              const SizedBox(height: 6,),
+              const SizedBox(
+                height: 6,
+              ),
               const Text(
                 'Mohamed gehad elnenaa',
                 maxLines: 2,
@@ -163,12 +151,11 @@ class MassengerScreeen extends StatelessWidget {
             ],
           ),
         ),
-
       ],
     );
   }
-  Widget buildChatItem()
-  {
+
+  Widget buildChatItem() {
     return Row(
       children: [
         Stack(
@@ -176,10 +163,11 @@ class MassengerScreeen extends StatelessWidget {
           children: const [
             CircleAvatar(
               radius: 30,
-              backgroundImage: NetworkImage('https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
+              backgroundImage: NetworkImage(
+                  'https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/305447738_627240605427224_6831826573318395078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IiazWh9EJF8AX-V16sE&_nc_ht=scontent.fcai21-2.fna&oh=00_AT_eYImieFMEYwBfhBr-bOgE5huh6OdoCeaaxKwkM7sUzQ&oe=631E1E3D'),
             ),
             CircleAvatar(
-              radius:7.5,
+              radius: 7.5,
               backgroundColor: Colors.white,
             ),
             CircleAvatar(
@@ -188,10 +176,11 @@ class MassengerScreeen extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(width: 10,),
+        const SizedBox(
+          width: 10,
+        ),
         Expanded(
           child: Column(
-
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
