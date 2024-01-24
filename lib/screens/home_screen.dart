@@ -113,15 +113,44 @@ class HomeScreen extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
+                Positioned(
+                  left:50,
+                  top: 24,
+                  child: Container(
+                    width: 306,
+                    height: 130,
+                    decoration: ShapeDecoration(
+                      color: Color(0x5473B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left:50,
+                  top: 12,
+                  child: Container(
+                    width: 318,
+                    height: 135,
+                    decoration: ShapeDecoration(
+                      color: Color(0x8973B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
+                  ),
+                ),
+
+
                 Center(
                   child: Container(
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          blurRadius: 40,
-                          color: Colors.grey.withOpacity(0.6),
-                          spreadRadius: 0,
-                          offset: Offset(8, 10))
-                    ]),
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF73B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
                     width: 331,
                     height: 140,
                     child: Card(
