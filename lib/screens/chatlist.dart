@@ -22,6 +22,7 @@ class _ChatListState extends State<ChatList> {
         title: Text(
           'Chats',
           style: TextStyle(
+            fontFamily: 'myfont',
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 25,
@@ -88,7 +89,10 @@ class _ChatListState extends State<ChatList> {
                           ),
                           label: Text(
                             'Search',
-                            style: TextStyle(color: Color(0xff979797)),
+                            style: TextStyle(
+                                fontFamily: 'myfont',
+                                color: Color(0xff979797)
+                            ),
                           ),
                         ),
                       ),
@@ -113,7 +117,7 @@ class _ChatListState extends State<ChatList> {
                       style: TextStyle(
                         color: Color(0xFF333333),
                         fontSize: 20,
-                        fontFamily: 'Baloo Bhai 2',
+                        fontFamily: 'myfont',
                         fontWeight: FontWeight.bold,
                         height: 0,
                       ),
@@ -151,7 +155,7 @@ class _ChatListState extends State<ChatList> {
                       style: TextStyle(
                         color: Color(0xFF333333),
                         fontSize: 20,
-                        fontFamily: 'Baloo Bhai 2',
+                        fontFamily: 'myfont',
                         fontWeight: FontWeight.bold,
                         height: 0,
                       ),

@@ -41,6 +41,7 @@ class ChatItem extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
+                        fontFamily: 'myfont',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -50,6 +51,7 @@ class ChatItem extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
+                          fontFamily: 'myfont',
                         color: Color(0xff979797)
                       ),
                     ),
@@ -60,7 +62,7 @@ class ChatItem extends StatelessWidget {
                 Positioned(
                   left: 248,
                   child: Text('10:43 am',style: TextStyle(
-                      fontFamily: 'Baloo Bhai 2',
+                      fontFamily: 'myfont',
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Color(0xff73B8EB)

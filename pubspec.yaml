@@ -43,6 +43,8 @@ dependencies:
   shared_preferences: ^2.2.2
   foundation: ^0.0.5
   image_picker: ^1.0.7
+  font_awesome_flutter: ^10.6.0
+  intl_phone_field: ^3.2.0
 
 dev_dependencies:
   flutter_test:

@@ -82,6 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Text(
                     'Dr.Sam',
                     style: TextStyle(
+                        fontFamily: 'myfont',
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
@@ -91,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   Text(
                     'online',
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                    style: TextStyle(  fontFamily: 'myfont',fontSize: 15, color: Colors.white),
                   ),
                 ],
               ),

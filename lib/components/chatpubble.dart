@@ -29,6 +29,7 @@ class chatbubble extends StatelessWidget {
                    child: Text(
                      "hello iam here to help u",
                      style: TextStyle(
+                       fontFamily: 'myfont',
                        fontSize: 20,
                        color: Colors.white,
                      ),
@@ -44,7 +45,7 @@ class chatbubble extends StatelessWidget {
                        children: [
                          Text(
                            '10:43 am',
-                           style: TextStyle(color: Colors.white, fontSize: 15),
+                           style: TextStyle(  fontFamily: 'myfont',color: Colors.white, fontSize: 15),
                          ),
                          SizedBox(
                            width: 3,
@@ -99,6 +100,7 @@ class chatbubbleforfriend extends StatelessWidget {
                 child: Text(
                   "thanks doctor",
                   style: TextStyle(
+                    fontFamily: 'myfont',
                     fontSize: 20,
                     color: Colors.black,
                   ),
@@ -114,7 +116,9 @@ class chatbubbleforfriend extends StatelessWidget {
                     children: [
                       Text(
                         '10:43 am',
-                        style: TextStyle(color: Colors.black  , fontSize: 15),
+                        style: TextStyle(
+                            fontFamily: 'myfont',
+                            color: Colors.black  , fontSize: 15),
                       ),
                       SizedBox(
                         width: 3,

@@ -1,6 +1,8 @@
+import 'package:eye_scan/LoginScreens/login.dart';
+import 'package:eye_scan/components/ProfileItem.dart';
 import 'package:eye_scan/screens/chatlist.dart';
 import 'package:eye_scan/screens/chat_screen.dart';
-import 'package:eye_scan/screens/home_screen.dart';
+import 'package:eye_scan/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'dynamicPage.dart';
