@@ -45,7 +45,7 @@ class Forget extends StatelessWidget {
               height: 20,
             ),
             CustomField(
-              text: "389587249824",
+              text: "Enter your phone",
               icon: PhosphorIcon(
                 PhosphorIcons.phone(),
                 color: Color(0xff75C2F6),

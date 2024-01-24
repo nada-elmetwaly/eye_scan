@@ -53,7 +53,7 @@ class ContractScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
-                      fontFamily: 'Baloo Bhai 2',
+                      fontFamily: "myfont",
                       fontWeight: FontWeight.w700,
                       height: 0,
                     ),

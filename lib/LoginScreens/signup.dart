@@ -88,7 +88,7 @@ class _SignUpState extends State<SignUp> {
                   height: 16,
                 ),
                 CustomField(
-                  text: "389587249824",
+                  text: "Phone",
                   icon: PhosphorIcon(
                     PhosphorIcons.phone(),
                     color: Color(0xff75C2F6),
@@ -101,8 +101,9 @@ class _SignUpState extends State<SignUp> {
                     Row(
                       children: [
                         Checkbox(
-                            checkColor: Color(0xff75C2F6),
-                            fillColor: MaterialStatePropertyAll(Colors.white),
+
+                            checkColor: Colors.white,
+                            
                             value: isChecked,
                             onChanged: (value) {
                               isChecked = !isChecked;

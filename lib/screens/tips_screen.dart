@@ -21,7 +21,7 @@ class tipsScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF333333),
                   fontSize: 24,
-                  fontFamily: 'Baloo Bhai 2',
+                  fontFamily: "myfont",
                   fontWeight: FontWeight.w700,
                   height: 0,
                   letterSpacing: 2.40,

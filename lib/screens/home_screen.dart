@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF73B8EB),
                   fontSize: 16,
-                  fontFamily: 'Righteous',
+                  fontFamily: "myfont",
                   fontWeight: FontWeight.w400,
                   height: 0,
                 ),
@@ -59,9 +59,9 @@ class HomeScreen extends StatelessWidget {
                         hintStyle: TextStyle(
                           color: Color(0xFF979797),
                           fontSize: 16,
-                          fontFamily: 'Baloo Bhai 2',
+                          fontFamily: "myfont",
                           fontWeight: FontWeight.w400,
-                          height: 0,
+                          height: 1,
                         ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
-                                fontFamily: 'Baloo Bhai 2',
+                                fontFamily: "myfont",
                                 fontWeight: FontWeight.w500,
                                 height: 0.14,
                               ),
@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
-                                fontFamily: 'Baloo Bhai 2',
+                                fontFamily: "myfont",
                                 fontWeight: FontWeight.w600,
                                 height: 0.06,
                               ),
@@ -168,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF333333),
                   fontSize: 16,
-                  fontFamily: 'Baloo Bhai 2',
+                  fontFamily: "myfont",
                   fontWeight: FontWeight.w700,
                   height: 0,
                 ),
@@ -218,7 +218,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF333333),
                       fontSize: 20,
-                      fontFamily: 'Baloo Bhai 2',
+                      fontFamily: "myfont",
                       fontWeight: FontWeight.w700,
                       height: 0,
                     ),
@@ -232,7 +232,7 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF73B8EB),
                     fontSize: 16,
-                    fontFamily: 'Baloo Bhai 2',
+                    fontFamily: "myfont",
                     fontWeight: FontWeight.w500,
                     height: 0,
                   ),
