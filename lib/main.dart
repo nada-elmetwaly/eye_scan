@@ -1,3 +1,5 @@
+import 'package:eye_scan/LoginScreens/acc_type.dart';
+import 'package:eye_scan/LoginScreens/welcome.dart';
 import 'package:eye_scan/LoginScreens/login.dart';
 import 'package:eye_scan/screens/chat_screen.dart';
 import 'package:eye_scan/screens/home_screen.dart';

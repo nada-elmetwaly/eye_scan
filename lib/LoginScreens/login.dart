@@ -2,6 +2,7 @@
 
 import 'package:eye_scan/LoginScreens/password_forget.dart';
 import 'package:eye_scan/LoginScreens/signup.dart';
+import 'package:eye_scan/LoginScreens/welcome.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
@@ -37,10 +38,12 @@ class Login extends StatelessWidget {
                 ),
                 CustomField(
                   text: "Enter your phone",
+                  
                   icon: 
                   PhosphorIcon(
                           PhosphorIcons.phone(),
                           color: Color(0xff75C2F6),
+                          
                         ),
                         obscureText: false,
                 ),
@@ -76,7 +79,10 @@ class Login extends StatelessWidget {
                   height: 23,
                 ),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Welcome()));
+                  },
                   text: "Login",
                 ),
                 SizedBox(
