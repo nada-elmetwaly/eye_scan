@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:eye_scan/LoginScreens/after_create.dart';
 import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
 import 'package:eye_scan/LoginScreens/widgets/desc.dart';
 import 'package:eye_scan/components/customButton.dart';
@@ -63,9 +64,10 @@ class CreatePass extends StatelessWidget {
             ),
             CustomButton(
                 onPressed: () {
-                 
+                 Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AfterCreate()));
                 },
-                text: "Reset password")
+                text: "Create password")
           ],
         ),
     );

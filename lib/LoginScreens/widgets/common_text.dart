@@ -12,7 +12,7 @@ class CommonText extends StatelessWidget {
                       color: Color(0xff333333),
                       fontFamily: "myfont",
                       fontSize: 30,
-                      letterSpacing: 2),
+                      letterSpacing: 3),
                 );
   }
 }
