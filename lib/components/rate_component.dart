@@ -74,7 +74,7 @@ class RateComponent extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF333333),
                 fontSize: 14,
-                fontFamily: 'Baloo Bhai 2',
+                fontFamily: "myfont",
                 fontWeight: FontWeight.w600,
                 height: 0,
               ),
@@ -88,7 +88,7 @@ class RateComponent extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF787878),
                 fontSize: 10,
-                fontFamily: 'Baloo Bhai 2',
+                fontFamily: "myfont",
                 fontWeight: FontWeight.w400,
                 height: 0,
               ),

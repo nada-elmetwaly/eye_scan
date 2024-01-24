@@ -24,9 +24,10 @@ class TipInfo extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
+                fontStyle: FontStyle.normal,
                 color: Color(0xFF4C4C4D),
                 fontSize: 13,
-                fontFamily: 'Baloo Bhai 2',
+                fontFamily: "myfont",
                 fontWeight: FontWeight.w400,
                 height: 0,
               ),
