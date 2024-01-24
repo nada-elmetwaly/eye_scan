@@ -39,33 +39,62 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 295,
-                  height: 40,
-                  color: Color(0xFFF7FBFB),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF7FBFB),
-                        prefixIcon: PhosphorIcon(
-                          PhosphorIcons.magnifyingGlass(),
-                          color: Color(0xFF979797),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Container(
+                    width: 295,
+                    height: 40,
+                    child: Card(
+                      elevation: 1,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: PhosphorIcon(
+                                  PhosphorIcons.slidersHorizontal(),
+                                  color: Color(0xFF73B8EB),
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          prefixIcon: IconButton(
+                            onPressed: () {
+                              ;
+                            },
+                            icon: PhosphorIcon(
+                              PhosphorIcons.magnifyingGlass(),
+                              color: Color(0xFF979797),
+                              size: 20,
+                            ),
+                          ),
+                          label: Text(
+                            'Search',
+                            style: TextStyle(color: Color(0xff979797)),
+                          ),
                         ),
-                        suffixIcon: PhosphorIcon(
-                          PhosphorIcons.slidersHorizontal(),
-                          color: Color(0xFF73B8EB),
-                        ),
-                        hintText: "Search",
-                        hintStyle: TextStyle(
-                          color: Color(0xFF979797),
-                          fontSize: 16,
-                          fontFamily: "myfont",
-                          fontWeight: FontWeight.w400,
-                          height: 1,
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(color: Color(0xFFF7FBFB)))),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

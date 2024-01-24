@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import 'custom_rating.dart';
+
 class RateComponent extends StatelessWidget {
   const RateComponent({super.key, required this.name, required this.image});
   final String name;
@@ -97,29 +99,11 @@ class RateComponent extends StatelessWidget {
           Positioned(
             left: 5,
             bottom: 10,
-            child: Row(
-              children: [
-                starRate()
-              ],
-            ),
+            child: RatingComponent(),
           ),
         ]),
       ],
     );
   }
-  starRate() {
-    return RatingBar.builder(
-      itemSize: 15,
-      initialRating: 3,
-      minRating: 1,
-      direction: Axis.horizontal,
-      itemCount: 5,
-      itemBuilder: (context, _) => const Icon(
-        Icons.star,
-        color: Colors.amber,
 
-      ),
-      onRatingUpdate: (rating) => debugPrint(rating.toString()),
-    );
-  }
 }

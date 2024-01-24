@@ -2,7 +2,7 @@ import 'package:eye_scan/components/ProfileItem.dart';
 import 'package:eye_scan/screens/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
