@@ -94,7 +94,7 @@ class DocInfo extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Patients',
+                        'Experience',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF73B8EB),
@@ -105,7 +105,7 @@ class DocInfo extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '3.3k',
+                        '10 yrs+',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF787878),
@@ -131,7 +131,7 @@ class DocInfo extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Patients',
+                        'Rating',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF73B8EB),
@@ -141,16 +141,22 @@ class DocInfo extends StatelessWidget {
                           height: 0,
                         ),
                       ),
-                      Text(
-                        '3.3k',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFF787878),
-                          fontSize: 10,
-                          fontFamily: 'Baloo Bhai 2',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
+                      Row(
+                        children: [
+                          Text(
+                            '4.0',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFF787878),
+                              fontSize: 10,
+                              fontFamily: 'myfont',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                            ),
+                          ),
+                          Icon(Icons.star,color:Colors.amber,size: 14,)
+
+                        ],
                       )
                     ],
                   ),
