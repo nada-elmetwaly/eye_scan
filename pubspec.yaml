@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  snippet_coder_utils: ^1.0.8
+  table_calendar: ^3.0.9
   phosphor_flutter: ^2.0.1
   flutter_rating_bar: ^4.0.1
   curved_labeled_navigation_bar: ^2.0.2
