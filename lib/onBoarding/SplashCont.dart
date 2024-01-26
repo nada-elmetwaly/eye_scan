@@ -21,14 +21,14 @@ class onBoardingContent extends StatelessWidget {
           child: Stack(
             children: [
               SizedBox(
-                
+                width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(img),
+                    Image.asset(img ),
                     SizedBox(
-                      height:10,
+                      height:50,
                     ),
                     Text(
                       title,
