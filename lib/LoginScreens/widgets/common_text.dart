@@ -8,11 +8,15 @@ class CommonText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
                   text,
-                  style: TextStyle(
-                      color: Color(0xff333333),
-                      fontFamily: "myfont",
-                      fontSize: 30,
-                      letterSpacing: 3),
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: Color(0xFF333333),
+        fontSize: 24,
+        fontFamily: 'myfont',
+        fontWeight: FontWeight.w700,
+        height: 0.06,
+        letterSpacing: 5,
+      ),
                 );
   }
 }

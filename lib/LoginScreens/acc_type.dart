@@ -24,7 +24,7 @@ class AccTypes extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width: 35,
+                  width: 25,
                 ),
                 IconButton(
                     onPressed: () {
@@ -32,11 +32,11 @@ class AccTypes extends StatelessWidget {
                     },
                     icon: Icon(Icons.arrow_back_ios)),
                 SizedBox(
-                  width: 25,
+                  width: 12,
                 ),
-                CommonText(text: "Type of account") , 
+                CommonText(text: "Type of account") ,
 
-                
+
               ],
             ),
             SizedBox(height: 95,),
@@ -45,7 +45,7 @@ class AccTypes extends StatelessWidget {
              desc: "You can recognize the disease easily\n and save your time , contact with your\n patients and see all appointments", 
              img: "assetes/d.png", 
              onTap: (){}),
-            SizedBox(height: 20,) ,
+            SizedBox(height: 49,) ,
             AccBox(
             title: "Patient",
              desc: "You can recognize the disease easily\n and save your time , contact with your\n patients and see all appointments", 

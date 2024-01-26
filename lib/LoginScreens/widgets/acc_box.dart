@@ -21,20 +21,20 @@ class AccBox extends StatelessWidget {
       
           
           Container(
-            width: 380,
-            height: 190,
+            width: 360,
+            height: 160,
            decoration: BoxDecoration(
                 boxShadow: [
               BoxShadow(
-                  blurRadius: 20,
-                  color: Color(0xff75C2F6).withOpacity(0.1),
-                  spreadRadius: 0,
-                  offset: Offset(10, 16))
+               color: Color(0xA5DADADA),
+                blurRadius: 29.30,
+                offset: Offset(1, 2),
+                spreadRadius: 0,)
             ] ,
               borderRadius: BorderRadius.circular(16)
               ),
             child: Card(
-              color: Color(0xff75C2F6).withOpacity(0.1),
+              color: Color(0xFFF4F8F9),
               elevation: 0,
               clipBehavior: Clip.none,
               child: Padding(
@@ -43,28 +43,30 @@ class AccBox extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 12,),
-                    Text( title , style: TextStyle(
-                      fontFamily: "myfont" ,
-                      fontSize: 18 , 
-                      color: Color(0xff000000) , 
-                      
-                    ),) ,
+                    Text( title , textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'myfont',
+                        fontWeight: FontWeight.w600,
+                        height: 0.08,
+                      ),) ,
                     SizedBox(height: 18,),
                     Text( desc ,
                      style: TextStyle(
                       fontFamily: "myfont" ,
                       fontSize: 13.5 ,
-                      height: 1.9, 
-                      
-                      color: Color(0xff000000) , 
-                      
-                    ),) 
+                      height: 1.9,
+
+                      color: Color(0xff000000) ,
+
+                    ),)
                   ],
                 ),
               ),
             ),
           ) ,
-          Positioned(child: Image.asset(img), height: 185, right: -20, bottom: 30, ) ,
+          Positioned(child: Image.asset(img), height:190, right: -40, bottom: 0.02, ) ,
           
         ],
         
