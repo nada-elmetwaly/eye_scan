@@ -28,7 +28,7 @@ class onBoardingContent extends StatelessWidget {
                   children: [
                     Image.asset(img ),
                     SizedBox(
-                      height:50,
+                      height:32,
                     ),
                     Text(
                       title,

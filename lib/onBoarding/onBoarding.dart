@@ -78,7 +78,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ],
           ),
           SizedBox(
-            height: 45,
+            height: 10,
           ),
           Expanded(
             child: PageView.builder(
@@ -106,9 +106,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: Column(
               children: [
                
-                SizedBox(
-                  height: 30,
-                ),
+               
                 onLastPage
                     ? GestureDetector(
                         onTap: () {
@@ -152,7 +150,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ),
           SizedBox(
-            height: 55,
+            height: 51,
           )
         ],
       )),
