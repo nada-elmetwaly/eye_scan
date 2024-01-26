@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -27,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF73B8EB),
                   fontSize: 16,
-                  fontFamily: 'Righteous',
+                  fontFamily: "myfont",
                   fontWeight: FontWeight.w400,
                   height: 0,
                 ),
@@ -39,33 +38,62 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 295,
-                  height: 40,
-                  color: Color(0xFFF7FBFB),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF7FBFB),
-                        prefixIcon: PhosphorIcon(
-                          PhosphorIcons.magnifyingGlass(),
-                          color: Color(0xFF979797),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Container(
+                    width: 295,
+                    height: 40,
+                    child: Card(
+                      elevation: 1,
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: PhosphorIcon(
+                                  PhosphorIcons.slidersHorizontal(),
+                                  color: Color(0xFF73B8EB),
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: new BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
+                          ),
+                          prefixIcon: IconButton(
+                            onPressed: () {
+                              ;
+                            },
+                            icon: PhosphorIcon(
+                              PhosphorIcons.magnifyingGlass(),
+                              color: Color(0xFF979797),
+                              size: 20,
+                            ),
+                          ),
+                          label: Text(
+                            'Search',
+                            style: TextStyle(color: Color(0xff979797)),
+                          ),
                         ),
-                        suffixIcon: PhosphorIcon(
-                          PhosphorIcons.slidersHorizontal(),
-                          color: Color(0xFF73B8EB),
-                        ),
-                        hintText: "Search",
-                        hintStyle: TextStyle(
-                          color: Color(0xFF979797),
-                          fontSize: 16,
-                          fontFamily: 'Baloo Bhai 2',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(color: Color(0xFFF7FBFB)))),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -84,15 +112,44 @@ class HomeScreen extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
+                Positioned(
+                  left:50,
+                  top: 24,
+                  child: Container(
+                    width: 306,
+                    height: 130,
+                    decoration: ShapeDecoration(
+                      color: Color(0x5473B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left:50,
+                  top: 12,
+                  child: Container(
+                    width: 318,
+                    height: 135,
+                    decoration: ShapeDecoration(
+                      color: Color(0x8973B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
+                  ),
+                ),
+
+
                 Center(
                   child: Container(
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          blurRadius: 40,
-                          color: Colors.grey.withOpacity(0.6),
-                          spreadRadius: 0,
-                          offset: Offset(8, 10))
-                    ]),
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF73B8EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(19),
+                      ),
+                    ),
                     width: 331,
                     height: 140,
                     child: Card(
@@ -109,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
-                                fontFamily: 'Baloo Bhai 2',
+                                fontFamily: "myfont",
                                 fontWeight: FontWeight.w500,
                                 height: 0.14,
                               ),
@@ -122,7 +179,7 @@ class HomeScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
-                                fontFamily: 'Baloo Bhai 2',
+                                fontFamily: "myfont",
                                 fontWeight: FontWeight.w600,
                                 height: 0.06,
                               ),
@@ -168,7 +225,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF333333),
                   fontSize: 16,
-                  fontFamily: 'Baloo Bhai 2',
+                  fontFamily: "myfont",
                   fontWeight: FontWeight.w700,
                   height: 0,
                 ),
@@ -218,7 +275,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF333333),
                       fontSize: 20,
-                      fontFamily: 'Baloo Bhai 2',
+                      fontFamily: "myfont",
                       fontWeight: FontWeight.w700,
                       height: 0,
                     ),
@@ -232,7 +289,7 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF73B8EB),
                     fontSize: 16,
-                    fontFamily: 'Baloo Bhai 2',
+                    fontFamily: "myfont",
                     fontWeight: FontWeight.w500,
                     height: 0,
                   ),

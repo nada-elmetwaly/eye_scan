@@ -1,4 +1,5 @@
 import 'package:eye_scan/screens/chat_screen.dart';
+import 'package:eye_scan/screens/chatlist.dart';
 import 'package:eye_scan/screens/home_screen.dart';
 import 'package:eye_scan/screens/profile_screen.dart';
 import 'package:eye_scan/screens/search_screen.dart';
@@ -27,7 +28,7 @@ class _TestState extends State<Test> {
     const HomeScreen(),
     const SearchScreen(),
     const tipsScreen(),
-    const ChatScreen(),
+    ChatList(),
     const ProfileScreen(),
   ];
 
@@ -45,6 +46,7 @@ class _TestState extends State<Test> {
             ),
 
             label: 'Home',
+
           ),
           CurvedNavigationBarItem(
             labelStyle: const TextStyle(color: Colors.white),
