@@ -13,45 +13,45 @@ class CommonBox extends StatelessWidget {
         padding: const EdgeInsets.all(30.0),
         child: Container(
                   width: 350,
-                  height: 300,
+                  height: 320,
                   decoration: BoxDecoration(
                       color: Color(0xff75C2F6).withOpacity(0.25),
                       borderRadius: BorderRadius.circular(16)),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 55,
-                      ),
-                      Image.asset(
-                        "assets/images/check.png",
-                        height: 90,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        text,
-                        style: TextStyle(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 55,
+                        ),
+                        Image.asset(
+                          "assets/images/check.png",
+                          height: 150,
+                        ),
+                        
+                        Text(
+                          text,
+                          style: TextStyle(
+                              fontFamily: "myfont",
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 7,
+                          
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 17.0),
+                          child: Text(desc , style: TextStyle(
                             fontFamily: "myfont",
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 7,
-                        
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 17.0),
-                        child: Text(desc , style: TextStyle(
-                          fontFamily: "myfont",
-                          fontSize: 18 , 
-                          wordSpacing: 1,
-                          letterSpacing: 1,
-                          color: Color(0xff787878)
-                        
-                        ),),
-                      )
-                    ],
+                            fontSize: 18 , 
+                            wordSpacing: 1,
+                            letterSpacing: 1,
+                            color: Color(0xff787878)
+                          
+                          ),),
+                        )
+                      ],
+                    ),
                   ),
                 ),
       );
