@@ -78,10 +78,11 @@ class _OnBoardingState extends State<OnBoarding> {
             ],
           ),
           SizedBox(
-            height: 35,
+            height: 45,
           ),
           Expanded(
             child: PageView.builder(
+              
               itemCount: demo_data.length,
               controller: _pageController,
               onPageChanged: (index) {
@@ -104,21 +105,7 @@ class _OnBoardingState extends State<OnBoarding> {
             },
             child: Column(
               children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 170,
-                    ),
-                    ...List.generate(
-                        demo_data.length,
-                        (index) => Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Dotindicator(
-                                isActive: index == _pageIndex,
-                              ),
-                            )),
-                  ],
-                ),
+               
                 SizedBox(
                   height: 30,
                 ),
@@ -145,12 +132,27 @@ class _OnBoardingState extends State<OnBoarding> {
                           height: 100,
                           width: 100,
                           child: Image.asset("assets/images/arrow1.png"),
-                        ))
+                        )) ,
+                         Row(
+                  children: [
+                    SizedBox(
+                      width: 170,
+                    ),
+                    ...List.generate(
+                        demo_data.length,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: Dotindicator(
+                                isActive: index == _pageIndex,
+                              ),
+                            )),
+                  ],
+                ),
               ],
             ),
           ),
           SizedBox(
-            height: 60,
+            height: 55,
           )
         ],
       )),
