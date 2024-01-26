@@ -40,14 +40,14 @@ class _OnBoardingState extends State<OnBoarding> {
     return Scaffold(
       body: SafeArea(
           child: Column(
-                  children: [
+        children: [
           SizedBox(
             height: 42,
           ),
           Row(
             children: [
               SizedBox(
-                width:28,
+                width: 28,
               ),
               IconButton(
                   onPressed: () {
@@ -64,8 +64,8 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => AccTypes()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AccTypes()));
                 },
                 child: Text(
                   "Skip",
@@ -77,8 +77,9 @@ class _OnBoardingState extends State<OnBoarding> {
               )
             ],
           ),
-          SizedBox(height: 35,),
-          
+          SizedBox(
+            height: 35,
+          ),
           Expanded(
             child: PageView.builder(
               itemCount: demo_data.length,
@@ -93,7 +94,6 @@ class _OnBoardingState extends State<OnBoarding> {
                 title: demo_data[index].title,
                 description: demo_data[index].description,
                 img: demo_data[index].img,
-                
               ),
             ),
           ),
@@ -102,88 +102,85 @@ class _OnBoardingState extends State<OnBoarding> {
               _pageController.nextPage(
                   curve: Curves.ease, duration: Duration(milliseconds: 300));
             },
-           
-              
-              child: Column(
-                
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 170,
-                      ),
-                      ...List.generate(
-                          demo_data.length,
-                          (index) => Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
-                                child: Dotindicator(
-                                  isActive: index == _pageIndex,
-                                ),
-                              )),
-                      
-                    ],
-                  ),
-                  SizedBox(height: 30,) ,
-                      onLastPage
-                          ? GestureDetector(
-                              onTap: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return AccTypes();
-                                }));
-                              },
-                              child: SizedBox(
-                                height: 100,
-                                width: 100,
-                                child: Image.asset("assets/images/arrow1.png"),
-                              ))
-                          : GestureDetector(
-                              onTap: () {
-                                _pageController.nextPage(
-                                    duration: Duration(milliseconds: 500),
-                                    curve: Curves.easeIn);
-                              },
-                              child: SizedBox(
-                                height: 100,
-                                width: 100,
-                                child: Image.asset("assets/images/arrow1.png"),
-                              ))
-                ],
-              ),
-            ),
-          
-         SizedBox(
-          height: 75,
-          )
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 170,
+                    ),
+                    ...List.generate(
+                        demo_data.length,
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: Dotindicator(
+                                isActive: index == _pageIndex,
+                              ),
+                            )),
                   ],
-                )),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                onLastPage
+                    ? GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return AccTypes();
+                          }));
+                        },
+                        child: SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset("assets/images/arrow1.png"),
+                        ))
+                    : GestureDetector(
+                        onTap: () {
+                          _pageController.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.easeIn);
+                        },
+                        child: SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset("assets/images/arrow1.png"),
+                        ))
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 60,
+          )
+        ],
+      )),
     );
   }
 }
 
 class OnBoard {
   final String img, title, description;
-  OnBoard(
-      {required this.img,
-      required this.title,
-      required this.description,
-     });
+  OnBoard({
+    required this.img,
+    required this.title,
+    required this.description,
+  });
 }
 
 final List<OnBoard> demo_data = [
   OnBoard(
-      img:  "assets/images/splash11.png",
-      title: "Eye Disease Recognition",
-      description: "Recognize about the disease at its begining",
-      ),
+    img: "assets/images/splash11.png",
+    title: "Eye Disease Recognition",
+    description: "Recognize about the disease at its begining",
+  ),
   OnBoard(
-      img: "assets/images/splash22.png",
-      title: "Appointment with doctors",
-      description: "We can easily book an appointment with suitable doctor",
-      ),
+    img: "assets/images/splash22.png",
+    title: "Appointment with doctors",
+    description: "We can easily book an appointment with suitable doctor",
+  ),
   OnBoard(
-      img: "assets/images/splash33.png",
-      title: "Chat",
-      description: "Easily communicate with eath other",
-      )
+    img: "assets/images/splash33.png",
+    title: "Chat",
+    description: "Easily communicate with eath other",
+  )
 ];
