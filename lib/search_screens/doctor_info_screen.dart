@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../payments/appointment_screen.dart';
 import '../payments/payment_plans.dart';
 import '../screens/search_screen.dart';
 
@@ -320,7 +321,9 @@ class DocInfo extends StatelessWidget {
             bottom: 90,
             left: 40,
             child: GestureDetector(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AppointmentScreen()));
+              },
               child: Container(
                 width: 327,
                 height: 56,

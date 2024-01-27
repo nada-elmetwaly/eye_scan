@@ -3,6 +3,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:snippet_coder_utils/FormHelper.dart';
 import '../components/custom_chose_rate.dart';
 import '../components/dropdownfield_component.dart';
+import '../components/shared_text.dart';
 import '../components/table_calender.dart';
 import '../screens/search_screen.dart';
 import '../widgets/price_time_widget.dart';
@@ -46,54 +47,12 @@ class _FilterScreenState extends State<FilterScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: const EdgeInsets.only(
-
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFF73B8EB),
-                        width: 1.0,
-                      ))),
-              child: Text(
-                "Location",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
-            SizedBox(height: 16,),
+            SharedText(text: 'Location'),
+            SizedBox(height: 18,),
             DropDownField(),
             SizedBox(height: 20,),
 
-            Container(
-              padding: const EdgeInsets.only(
-
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Color(0xFF73B8EB),
-                width: 1.0,
-              ))),
-              child: Text(
-                "Rating",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
+            SharedText(text: 'Rating'),
             SizedBox(
               height: 16,
             ),
@@ -110,131 +69,49 @@ class _FilterScreenState extends State<FilterScreen> {
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(
-                top: 24,
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Color(0xFF73B8EB),
-                width: 1.0,
-              ))),
-              child: Text(
-                "Schedule",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
+            SizedBox(height: 24,),
+            SharedText(text: 'Schedule'),
             TableCalander(),
-            Container(
-              padding: const EdgeInsets.only(
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFF73B8EB),
-                        width: 1.0,
-                      ))),
-              child: Text(
-                "Choose time",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
+            SharedText(text: 'Choose time'),
             SizedBox(height: 16,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  PriceWidget(data: '02:00 PM',width: 75, height: 31,),
-                  PriceWidget(data: '03:00 PM',width: 75, height: 31,),
-                  PriceWidget(data: '04:00 PM',width: 75, height: 31,),
-                  PriceWidget(data: '05:00 PM',width: 75, height: 31,),
-                  PriceWidget(data: '06:00 PM',width: 75, height: 31,),
-                  PriceWidget(data: '07:00 PM',width: 75, height: 31,),
+                  PriceWidget(data: '02:00 PM',width: 75, height: 31,size: 10,),
+                  PriceWidget(data: '03:00 PM',width: 75, height: 31,size: 10,),
+                  PriceWidget(data: '04:00 PM',width: 75, height: 31,size: 10,),
+                  PriceWidget(data: '05:00 PM',width: 75, height: 31,size: 10,),
+                  PriceWidget(data: '06:00 PM',width: 75, height: 31,size: 10,),
+                  PriceWidget(data: '07:00 PM',width: 75, height: 31,size: 10,),
 
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(
-                top: 15,
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFF73B8EB),
-                        width: 1.0,
-                      ))),
-              child: Text(
-                "Price",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-
-            ),
+            SizedBox(height: 24,),
+            SharedText(text: 'Price'),
             SizedBox(height: 16,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  PriceWidget(data: '20\$',width: 54, height:26,),
-                  PriceWidget(data: '50\$',width: 54, height:26,),
-                  PriceWidget(data: '100\$',width: 54, height:26,),
-                  PriceWidget(data: '170\$',width: 54, height:26,),
-                  PriceWidget(data: '180\$',width: 54, height:26,),
-                  PriceWidget(data: '200\$',width: 54, height:26,),
+                  PriceWidget(data: '20\$',width: 54, height:26,size: 10,),
+                  PriceWidget(data: '50\$',width: 54, height:26,size: 10,),
+                  PriceWidget(data: '100\$',width: 54, height:26,size: 10,),
+                  PriceWidget(data: '170\$',width: 54, height:26,size: 10,),
+                  PriceWidget(data: '180\$',width: 54, height:26,size: 10,),
+                  PriceWidget(data: '200\$',width: 54, height:26,size: 10,),
 
                 ],
               ),
 
             ),
-            Container(
-              padding: const EdgeInsets.only(
-                top: 15,
-                left: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFF73B8EB),
-                        width: 1.0,
-                      ))),
-              child: Text(
-                "Type",
-                style: TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 20,
-                  fontFamily: "myfont",
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-
-            ),
+            SizedBox(height: 25,),
+            SharedText(text: 'Type'),
             SizedBox(height: 16,),
             Row(children: [
-              PriceWidget(data: 'Offline',width: 96,height: 31,),
-              PriceWidget(data: 'Online',width: 96,height: 31,)
+              PriceWidget(data: 'Offline',width: 96,height: 31,size: 16),
+              PriceWidget(data: 'Online',width: 96,height: 31,size: 16,)
             ],),
             SizedBox(height: 30,),
             Row(
