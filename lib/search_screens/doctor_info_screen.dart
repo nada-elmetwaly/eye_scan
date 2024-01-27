@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../payments/payment_plans.dart';
 import '../screens/search_screen.dart';
 
 class DocInfo extends StatelessWidget {
@@ -254,28 +255,31 @@ class DocInfo extends StatelessWidget {
                     size: 20,
                   ),
                 ),
-                Container(
-                  width:23,
-                  height: 23,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
-                  child: Stack(children: [
-                    Container(
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF73B8EB),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                GestureDetector(
+                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentPlans()));},
+                  child: Container(
+                    width:23,
+                    height: 23,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(),
+                    child: Stack(children: [
+                      Container(
+                        decoration: ShapeDecoration(
+                          color: Color(0xFF73B8EB),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                         ),
                       ),
-                    ),
-                    Center(
-                      child: PhosphorIcon(
-                        PhosphorIcons.chatCircleDots(),
-                        color: Colors.white,
-                        size: 15,
+                      Center(
+                        child: PhosphorIcon(
+                          PhosphorIcons.chatCircleDots(),
+                          color: Colors.white,
+                          size: 15,
+                        ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                  ),
                 )
               ],
             ),
