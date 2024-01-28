@@ -1,4 +1,9 @@
+import 'package:eye_scan/components/AppoinmentCard.dart';
+import 'package:eye_scan/components/completed%20card.dart';
 import 'package:eye_scan/components/maincolor.dart';
+import 'package:eye_scan/historyscreens/Appointment%20screen/CanceledScreen.dart';
+import 'package:eye_scan/historyscreens/Appointment%20screen/completedScreen.dart';
+import 'package:eye_scan/historyscreens/Appointment%20screen/upcomingscreen.dart';
 import 'package:eye_scan/screens/chatlist.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +22,7 @@ class _HistoryAppoState extends State<HistoryAppointPage> {
 
       child: Scaffold(
         appBar: AppBar(
+
           titleSpacing: 20,
           backgroundColor: Colors.white,
           elevation: 0.0,
@@ -31,6 +37,7 @@ class _HistoryAppoState extends State<HistoryAppointPage> {
             ),
           ),
           bottom:  TabBar(
+            indicatorPadding: EdgeInsets.only(right: 5,left: 5),
             indicatorSize: TabBarIndicatorSize.tab,
             labelColor: Colors.white,
               indicator: BoxDecoration(
@@ -49,7 +56,9 @@ class _HistoryAppoState extends State<HistoryAppointPage> {
         ),
         body: TabBarView(
           children: [
-            ChatList(),
+            UpcomingPage(),
+            CompletedScreen(),
+            CanceledScreen(),
           ],
         )
       ),
