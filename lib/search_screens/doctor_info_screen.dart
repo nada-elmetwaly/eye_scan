@@ -324,25 +324,28 @@ class DocInfo extends StatelessWidget {
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>AppointmentScreen()));
                     },
-                    child: Container(
-                      width: 327,
-                      height: 56,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF73B8EB),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Container(
+                        width: 327,
+                        height: 56,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFF73B8EB),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Book an appointment',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontFamily: 'myfont',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
+                        child: Center(
+                          child: Text(
+                            'Book an appointment',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: 'myfont',
+                              fontWeight: FontWeight.w700,
+                              height: 0,
+                            ),
                           ),
                         ),
                       ),
