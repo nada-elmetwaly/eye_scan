@@ -1,4 +1,5 @@
 import 'package:eye_scan/payments/payment_methods_screen.dart';
+import 'package:eye_scan/payments/success_fail/success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
@@ -291,24 +292,27 @@ class _NewCardState extends State<NewCard> {
             ),
             SizedBox(height: 20,),
             Center(
-              child: Container(
-                width: 327,
-                height: 56,
-                decoration: ShapeDecoration(
-                  color: Color(0xFF73B8EB),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+              child: GestureDetector(
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SuccessScreen()));},
+                child: Container(
+                  width: 327,
+                  height: 56,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFF73B8EB),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Pay now',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'myfont',
-                      fontWeight: FontWeight.w700,
-                      height: 0,
+                  child: Center(
+                    child: Text(
+                      'Pay now',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'myfont',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),
