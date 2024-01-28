@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../payments/appointment_screen.dart';
-import '../payments/payment_plans.dart';
+import '../payments/payment_plans_mon.dart';
 import '../screens/search_screen.dart';
 
 class DocInfo extends StatelessWidget {

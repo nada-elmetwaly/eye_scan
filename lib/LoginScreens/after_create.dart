@@ -10,21 +10,23 @@ class AfterCreate extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 80,
-            ),
-            CommonBox(text: "Success", desc: "You have been successfully reset your password") ,
-            
-            CustomButton(
-                text: "Login",
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Login()));
-                })
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              CommonBox(text: "Success", desc: "You have been successfully reset your password") ,
+              
+              CustomButton(
+                  text: "Login",
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Login()));
+                  })
+            ],
+          ),
         ),
       ),
     );
