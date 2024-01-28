@@ -105,8 +105,10 @@ class _OnBoardingState extends State<OnBoarding> {
             },
             child: Column(
               children: [
-               
-               
+               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 SizedBox(width: 26,) ,
                 onLastPage
                     ? GestureDetector(
                         onTap: () {
@@ -131,11 +133,12 @@ class _OnBoardingState extends State<OnBoarding> {
                           width: 100,
                           child: Image.asset("assets/images/arrow1.png"),
                         )) ,
+                ]
+               ) ,
                          Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: 170,
-                    ),
+                    
                     ...List.generate(
                         demo_data.length,
                         (index) => Padding(

@@ -10,9 +10,9 @@ class CommonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
       Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.symmetric(horizontal: 22.0 , vertical: 30),
         child: Container(
-                  width: 350,
+                  width: 360,
                   height: 320,
                   decoration: BoxDecoration(
                       color: Color(0xff75C2F6).withOpacity(0.25),
@@ -21,7 +21,7 @@ class CommonBox extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 55,
+                          height: 40,
                         ),
                         Image.asset(
                           "assets/images/check.png",
@@ -40,7 +40,7 @@ class CommonBox extends StatelessWidget {
                           
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 17.0),
+                          padding: const EdgeInsets.only(left: 17.0 , right: 13),
                           child: Text(desc , style: TextStyle(
                             fontFamily: "myfont",
                             fontSize: 18 , 

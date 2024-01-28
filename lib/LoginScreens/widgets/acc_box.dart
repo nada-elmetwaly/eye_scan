@@ -6,8 +6,9 @@ class AccBox extends StatelessWidget {
   final String title;
   final String desc;
   final String img;
+  
   final VoidCallback onTap;
-  const AccBox({super.key , required this.title,required this.desc, required this.img , required this.onTap});
+  AccBox({super.key , required this.title,required this.desc, required this.img , required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class AccBox extends StatelessWidget {
       
           
           Container(
+            
             width: 360,
             height: 160,
            decoration: BoxDecoration(

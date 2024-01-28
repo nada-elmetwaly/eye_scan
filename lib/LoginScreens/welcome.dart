@@ -15,21 +15,23 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 80,
-            ),
-            CommonBox(text: "Welcome back", desc: "Your log in has been successfully") ,
-            
-            CustomButton(
-                text: "Go to home",
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Test()));
-                })
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              CommonBox(text: "Welcome back", desc: "Your log in has been successfully") ,
+              
+              CustomButton(
+                  text: "Go to home",
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Test()));
+                  })
+            ],
+          ),
         ),
       ),
     );
