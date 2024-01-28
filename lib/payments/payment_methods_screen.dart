@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/shared_text.dart';
 import 'appointment_screen.dart';
+import 'new_card_screen.dart';
 
 class PaymentMethods extends StatefulWidget {
   const PaymentMethods({super.key});
@@ -215,25 +216,28 @@ class _PaymentMethodsState extends State<PaymentMethods> {
           ),
           SizedBox(height: 68,),
           Center(
-            child: Container(
-              width: 327,
-              height: 56,
-              decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 2, color: Color(0xFF73B8EB)),
-                  borderRadius: BorderRadius.circular(16),
+            child: GestureDetector(
+             onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>NewCard()));},
+              child: Container(
+                width: 327,
+                height: 56,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 2, color: Color(0xFF73B8EB)),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  'Add new card',
-                  style: TextStyle(
-                    color: Color(0xFF73B8EB),
-                    fontSize: 16,
-                    fontFamily: 'myfont',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
+                child: Center(
+                  child: Text(
+                    'Add new card',
+                    style: TextStyle(
+                      color: Color(0xFF73B8EB),
+                      fontSize: 16,
+                      fontFamily: 'myfont',
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
                   ),
                 ),
               ),
@@ -241,29 +245,32 @@ class _PaymentMethodsState extends State<PaymentMethods> {
           ),
           SizedBox(height: 8,),
           Center(
-            child: Container(
-              width: 327,
-              height: 56,
-              decoration: ShapeDecoration(
-                color:  Color(0xFF73B8EB),
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 2, color: Color(0xFF73B8EB)),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Confirm',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'myfont',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
+            child: GestureDetector(
+              onTap: (){},
+              child: Container(
+                width: 327,
+                height: 56,
+                decoration: ShapeDecoration(
+                  color:  Color(0xFF73B8EB),
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 2, color: Color(0xFF73B8EB)),
+                    borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-              ),
+                child: Center(
+                  child: Text(
+                    'Confirm',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'myfont',
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
+                  ),
+                ),
 
+              ),
             ),
           ),
         ],
