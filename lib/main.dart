@@ -1,4 +1,5 @@
 import 'package:eye_scan/LoginScreens/login.dart';
+import 'package:eye_scan/historyscreens/appointmentscreen.dart';
 import 'package:eye_scan/onBoarding/onBoarding.dart';
 import 'package:eye_scan/screens/chat_screen.dart';
 import 'package:eye_scan/screens/profile_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: OnBoarding()
+      home: HistoryAppointPage(),
       
     );
   }
