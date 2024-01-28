@@ -169,81 +169,8 @@ class DocInfo extends StatelessWidget {
           Positioned(
               top: 70, left: 15, child: IconButton(icon:Icon(Icons.arrow_back_ios_new_rounded),onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchScreen()));},)),
           Positioned(
-            top: 420,
-            left: 15,
-            child: Text(
-              'Dr. Thomas',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF333333),
-                fontSize: 20,
-                fontFamily: 'myfont',
-                fontWeight: FontWeight.w700,
-                height: 0,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 450,
-            left: 15,
-            child: Text(
-              'Eye diseases',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF787878),
-                fontSize: 18,
-                fontFamily: 'myfont',
-                fontWeight: FontWeight.w500,
-                height: 0,
-              ),
-            ),
-          ),
-          Positioned(
-            left: 2,
-            top: 475,
-            child: IconButton(
-              onPressed: () {
-                ;
-              },
-              icon: PhosphorIcon(
-                PhosphorIcons.mapPin(),
-                color: Color(0xFF73B8EB),
-                size: 20,
-              ),
-            ),
-          ),
-          Positioned(
-            left: 40,
-            top: 490,
-            child: Text(
-              'Mansoura, Egypt ',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF73B8EB),
-                fontSize: 12,
-                fontFamily: 'myfont',
-                fontWeight: FontWeight.w600,
-                height: 0,
-                letterSpacing: 0.56,
-              ),
-            ),
-          ),
-          Positioned(
-              top: 9,
-              right: 10,
-              child: Text(
-                '\$20',
-                style: TextStyle(
-                  color: Color(0xFF73B8EB),
-                  fontSize: 14,
-                  fontFamily: 'myfont',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              )),
-          Positioned(
-            bottom: 340,
-            left: 6,
+            top: 480,
+            left: 8,
             child: Row(
               children: [
                 IconButton(
@@ -251,104 +178,188 @@ class DocInfo extends StatelessWidget {
                     ;
                   },
                   icon: PhosphorIcon(
-                    PhosphorIcons.crownSimple(),
-                    color: Colors.amber,
+                    PhosphorIcons.mapPin(),
+                    color: Color(0xFF73B8EB),
                     size: 20,
                   ),
                 ),
-                GestureDetector(
-                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentPlans()));},
-                  child: Container(
-                    width:23,
-                    height: 23,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(),
-                    child: Stack(children: [
-                      Container(
+                Text(
+                  'Mansoura, Egypt ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF73B8EB),
+                    fontSize: 12,
+                    fontFamily: 'myfont',
+                    fontWeight: FontWeight.w600,
+                    height: 0,
+                    letterSpacing: 0.56,
+                  ),
+                ),
+
+
+              ],
+            ),
+          ),
+          Positioned(
+            top: 430,
+            left: 10,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+
+                    children: [
+                      Text(
+                        'Dr. Thomas',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 20,
+                          fontFamily: 'myfont',
+                          fontWeight: FontWeight.w700,
+                          height: 0,
+                        ),
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 200,right: 10),
+                        child: Text(
+                          '100EG',
+                          style: TextStyle(
+                            color: Color(0xFF73B8EB),
+                            fontSize: 16,
+                            fontFamily: 'myfont',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                      )
+
+                    ],
+                  ),
+                  Text(
+                    'Eye diseases',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF787878),
+                      fontSize: 18,
+                      fontFamily: 'myfont',
+                      fontWeight: FontWeight.w500,
+                      height: 0,
+                    ),
+                  ),
+                  SizedBox(height: 17,),
+
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          ;
+                        },
+                        icon: PhosphorIcon(
+                          PhosphorIcons.crownSimple(),
+                          color: Colors.amber,
+                          size: 20,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentPlans()));},
+                        child: Container(
+                          width:23,
+                          height: 23,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(),
+                          child: Stack(children: [
+                            Container(
+                              decoration: ShapeDecoration(
+                                color: Color(0xFF73B8EB),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                              ),
+                            ),
+                            Center(
+                              child: PhosphorIcon(
+                                PhosphorIcons.chatCircleDots(),
+                                color: Colors.white,
+                                size: 15,
+                              ),
+                            ),
+                          ]),
+                        ),
+                      )
+
+
+                    ],
+                  ),
+                  Text(
+                    'About',
+                    style: TextStyle(
+                      color: Color(0xFF333333),
+                      fontSize: 16,
+                      fontFamily: 'myfont',
+                      fontWeight: FontWeight.w500,
+                      height: 0,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 327,
+                    height: 71,
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dok eiusmod tempor incididunt ut labore et dolore magnavgfuijascij aliqua.Lorem ipsum dolor sit amet, consectetur adipiscinge elit,li sed do eiusmod temor',
+                      style: TextStyle(
+                        color: Color(0xFF787676),
+                        fontSize: 12,
+                        fontFamily: 'myfont',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height:32 ,),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AppointmentScreen()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Container(
+                        width: 327,
+                        height: 56,
                         decoration: ShapeDecoration(
                           color: Color(0xFF73B8EB),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
                         ),
-                      ),
-                      Center(
-                        child: PhosphorIcon(
-                          PhosphorIcons.chatCircleDots(),
-                          color: Colors.white,
-                          size: 15,
+                        child: Center(
+                          child: Text(
+                            'Book an appointment',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: 'myfont',
+                              fontWeight: FontWeight.w700,
+                              height: 0,
+                            ),
+                          ),
                         ),
                       ),
-                    ]),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Positioned(
-            bottom: 320,
-            left: 20,
-            child: Text(
-              'About',
-              style: TextStyle(
-                color: Color(0xFF333333),
-                fontSize: 16,
-                fontFamily: 'myfont',
-                fontWeight: FontWeight.w500,
-                height: 0,
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 250,
-            left: 20,
-            child: SizedBox(
-              width: 327,
-              height: 71,
-              child: Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dok eiusmod tempor incididunt ut labore et dolore magnavgfuijascij aliqua.Lorem ipsum dolor sit amet, consectetur adipiscinge elit,li sed do eiusmod temor',
-                style: TextStyle(
-                  color: Color(0xFF787676),
-                  fontSize: 12,
-                  fontFamily: 'myfont',
-                  fontWeight: FontWeight.w400,
-                  height: 0,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 90,
-            left: 40,
-            child: GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AppointmentScreen()));
-              },
-              child: Container(
-                width: 327,
-                height: 56,
-                decoration: ShapeDecoration(
-                  color: Color(0xFF73B8EB),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Book an appointment',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'myfont',
-                      fontWeight: FontWeight.w700,
-                      height: 0,
                     ),
                   ),
-                ),
+
+
+
+
+                ],
               ),
             ),
           )
+
         ],
       ),
     );

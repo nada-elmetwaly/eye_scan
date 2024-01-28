@@ -253,7 +253,7 @@ class _PaymentMethodsState extends State<PaymentMethods> {
               ),
               child: Center(
                 child: Text(
-                  'Add new card',
+                  'Confirm',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
