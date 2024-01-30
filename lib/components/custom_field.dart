@@ -10,7 +10,7 @@ class CustomField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xffF4F8F9),
+        color: Color(0xffF3F3F3),
         borderRadius: BorderRadius.circular(16),
       ),
       width: 327,

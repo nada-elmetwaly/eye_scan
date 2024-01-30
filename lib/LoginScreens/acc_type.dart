@@ -3,6 +3,7 @@
 import 'package:eye_scan/LoginScreens/login.dart';
 import 'package:eye_scan/LoginScreens/widgets/acc_box.dart';
 import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensDoctor/login_d.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,10 @@ class AccTypes extends StatelessWidget {
             title: "Doctor",
              desc: "You can recognize the disease easily\n and save your time , contact with your\n patients and see all appointments", 
              img: "assetes/d.png", 
-             onTap: (){}),
+             onTap: (){
+               Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => LoginD()));
+             }),
             SizedBox(height: 49,) ,
             AccBox(
             title: "Patient",

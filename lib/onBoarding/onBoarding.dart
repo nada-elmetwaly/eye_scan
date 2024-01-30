@@ -42,7 +42,7 @@ class _OnBoardingState extends State<OnBoarding> {
           child: Column(
         children: [
           SizedBox(
-            height: 42,
+            height: 33,
           ),
           Row(
             children: [
@@ -78,7 +78,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 60,
           ),
           Expanded(
             child: PageView.builder(
@@ -153,7 +153,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ),
           SizedBox(
-            height: 51,
+            height: 47,
           )
         ],
       )),
