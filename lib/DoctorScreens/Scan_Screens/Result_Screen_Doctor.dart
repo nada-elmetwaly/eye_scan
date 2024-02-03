@@ -2,6 +2,8 @@ import 'dart:typed_data';
 
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
 import 'package:eye_scan/components/maincolor.dart';
+import 'package:eye_scan/dynamicPage.dart';
+import 'package:eye_scan/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -77,7 +79,7 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                   Expanded(
                     child: Text(
         
-                      'Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti .Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti .',style: TextStyle(
+                      'Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti .',style: TextStyle(
                       color: maincolorgrey,
                       fontFamily: 'myfont',
                       fontSize: 13,
@@ -85,6 +87,57 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                     ),),
                   )
                 ],
+              ),
+              SizedBox(height: 25,),
+              Container(
+                width: 327,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: maincolorblue,
+                    borderRadius:BorderRadius.circular(16) ,
+                    border: Border.all(
+                        color: Colors.white
+                    )
+                ),
+                child: MaterialButton(onPressed: (){},
+                  child:
+                  Text(
+                    'Save Result',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: "myfont",
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10,),
+              Container(
+                width: 327,
+                height: 56,
+                decoration: BoxDecoration(
+                    borderRadius:BorderRadius.circular(16) ,
+                    border: Border.all(
+                        color: Colors.blue
+                    )
+                ),
+                child: MaterialButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Test()));
+                },
+                  child:
+                  Text(
+                    'Back To Home',
+                    style: TextStyle(
+                      color: maincolorblue,
+                      fontSize: 14,
+                      fontFamily: "myfont",
+                      fontWeight: FontWeight.w700,
+                      height: 0,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

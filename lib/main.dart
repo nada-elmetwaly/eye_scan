@@ -1,4 +1,5 @@
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
+import 'package:eye_scan/DoctorScreens/Schedule_Screen/Doctor_Schedule.dart';
 import 'package:eye_scan/LoginScreens/login.dart';
 import 'package:eye_scan/components/historyCard.dart';
 import 'package:eye_scan/onBoarding/SplashCont.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home:OnBoarding(),
+      home:DoctorSchedule(),
       
     );
   }
