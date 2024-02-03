@@ -1,11 +1,13 @@
 import 'package:eye_scan/components/AppoinmentCard.dart';
 import 'package:eye_scan/components/completed%20card.dart';
 import 'package:eye_scan/components/maincolor.dart';
-import 'package:eye_scan/historyscreens/Appointment%20screen/CanceledScreen.dart';
-import 'package:eye_scan/historyscreens/Appointment%20screen/completedScreen.dart';
-import 'package:eye_scan/historyscreens/Appointment%20screen/upcomingscreen.dart';
+
 import 'package:eye_scan/screens/chatlist.dart';
 import 'package:flutter/material.dart';
+
+import 'Appointment screen/CanceledScreen.dart';
+import 'Appointment screen/completedScreen.dart';
+import 'Appointment screen/upcomingscreen.dart';
 
 class HistoryAppointPage extends StatefulWidget {
   const HistoryAppointPage({super.key});

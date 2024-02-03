@@ -1,7 +1,8 @@
 import 'package:eye_scan/components/maincolor.dart';
-import 'package:eye_scan/historyscreens/Result_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../patientScreen/historyscreens/Result_Screen.dart';
 
 class HistoryCard extends StatefulWidget {
   const HistoryCard({super.key});

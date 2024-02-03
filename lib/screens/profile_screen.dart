@@ -1,10 +1,12 @@
 import 'package:eye_scan/components/ProfileItem.dart';
-import 'package:eye_scan/historyscreens/Record_screen.dart';
-import 'package:eye_scan/historyscreens/appointmentscreen.dart';
+
 import 'package:eye_scan/payments/appointment_screen.dart';
 import 'package:eye_scan/screens/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../patientScreen/historyscreens/Record_screen.dart';
+import '../patientScreen/historyscreens/appointmentscreen.dart';
 
 
 class ProfileScreen extends StatelessWidget {
