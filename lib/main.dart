@@ -10,6 +10,7 @@ import 'package:eye_scan/screens/chat_screen.dart';
 import 'package:eye_scan/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'DoctorScreens/nav_bar_screen.dart';
 import 'dynamicPage.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home:DoctorSchedule(),
+      home:DoctorNav(),
       
     );
   }
