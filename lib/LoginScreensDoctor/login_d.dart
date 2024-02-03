@@ -4,6 +4,7 @@ import 'package:eye_scan/LoginScreens/password_forget.dart';
 import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
 import 'package:eye_scan/LoginScreens/signup.dart';
 import 'package:eye_scan/LoginScreens/welcome.dart';
+import 'package:eye_scan/LoginScreensDoctor/signup_1.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
@@ -11,14 +12,14 @@ import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class Login extends StatefulWidget {
-  Login({super.key});
+class LoginD extends StatefulWidget {
+  LoginD({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginD> createState() => _LoginDState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginDState extends State<LoginD> {
   final _formKey = GlobalKey<FormState>();
 
   
@@ -164,7 +165,7 @@ class _LoginState extends State<Login> {
                             onTap: () {
                               //signup
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignUp()));
+                                  builder: (context) => SignUpOne()));
                             },
                             child: Text(
                               " Sign up",

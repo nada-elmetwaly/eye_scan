@@ -1,23 +1,26 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_new
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:eye_scan/LoginScreens/login.dart';
 import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
+import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensDoctor/signup_2.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class SignUp extends StatefulWidget {
-  SignUp({super.key});
+class SignUpOne extends StatefulWidget {
+  SignUpOne({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<SignUpOne> createState() => _SignUpOneState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpOneState extends State<SignUpOne> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController password = TextEditingController();
   TextEditingController confirmpassword = TextEditingController();
@@ -40,24 +43,54 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 40,
                   ),
-                  Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontSize: 33,
-                      fontFamily: "myfont",
-                      letterSpacing: 3,
-                    ),
-                  ),
+                  Row(
+              children: [
+                SizedBox(
+                  width: 35,
+                ),
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios)),
+                SizedBox(
+                  width: 59,
+                ),
+                CommonText(text: "Sign Up")
+                
+              ],
+            ),
                   SizedBox(
                     height: 30,
                   ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: LinearPercentIndicator(
+                      animation: true,
+                      animationDuration: 1000 ,
+                      lineHeight: 6,
+                      percent: 0.35,
+                      barRadius: Radius.circular(16),
+                      progressColor: Color(0xff75C2F6),
+                      backgroundColor: Color(0xffDADADA),
+                      width: 372,
+                    ),
+                  ) ,
+                  SizedBox(height: 10,) , 
+                  Text("1/3" , style: TextStyle(
+                    fontSize: 15 , 
+                    fontWeight: FontWeight.bold
+                  ),) ,
+                  SizedBox(height: 40,) ,
+                
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
                       obscureText: false,
-                      decoration: buildInputDecoration("assets/images/User-Outline.png", "any name"),
+                      decoration: buildInputDecoration("assets/images/User-Outline.png" , "any name"),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return " Please Enter name ";
@@ -268,12 +301,13 @@ class _SignUpState extends State<SignUp> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         print("successful");
-                        return;
+                        Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignUpTwo()));
                       } else {
                         print("UnSuccessfull");
                       }
                     },
-                    text: "Sign Up",
+                    text: "Next",
                   ),
                   SizedBox(
                     height: 18,
@@ -304,61 +338,9 @@ class _SignUpState extends State<SignUp> {
                           )),
                     ],
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(children: [
-                    Expanded(
-                      child: new Container(
-                          margin:
-                              const EdgeInsets.only(left: 10.0, right: 20.0),
-                          child: Divider(
-                            color: Color(0xffEAF6F6),
-                            height: 36,
-                          )),
-                    ),
-                    Text(
-                      "OR",
-                      style: TextStyle(color: Color(0xffA1A8B0), fontSize: 18),
-                    ),
-                    Expanded(
-                      child: new Container(
-                          margin:
-                              const EdgeInsets.only(left: 20.0, right: 10.0),
-                          child: Divider(
-                            color: Color(0xffEAF6F6),
-                            height: 36,
-                          )),
-                    ),
-                  ]),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Column(
-                    children: [
-                      SquareTile(
-                        imagePath: "assets/images/google.png",
-                        text: "Sign in with Google",
-                        width: 45,
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SquareTile(
-                        imagePath: "assets/images/apple-logo.png",
-                        text: "Sign in with Apple",
-                        width: 50,
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SquareTile(
-                        imagePath: "assets/images/face.png",
-                        text: "Sign in with Facebook",
-                        width: 35,
-                      )
-                    ],
-                  )
+                 
+                 
+                 
                 ],
               ),
             ),

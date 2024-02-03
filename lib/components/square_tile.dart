@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class SquareTile extends StatelessWidget {
@@ -13,11 +15,15 @@ class SquareTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+     
         onPressed: () {},
-        style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.white),
-            padding: MaterialStatePropertyAll(
-                EdgeInsets.symmetric(horizontal: 60, vertical: 4))),
+       style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: 60 , vertical: 6) ,
+        elevation: 0 , 
+        side: BorderSide(color: Color(0xffEAF0F6)) , 
+        
+       ),
+          
         child: Wrap(
           children: [
             Padding(

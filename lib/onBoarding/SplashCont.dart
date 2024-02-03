@@ -20,35 +20,38 @@ class onBoardingContent extends StatelessWidget {
           width: double.infinity,
           child: Stack(
             children: [
+             
               SizedBox(
                 width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(img ),
-                    SizedBox(
-                      height:32,
-                    ),
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontFamily: "myfont",
-                        fontSize: 22,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(img ),
+                      SizedBox(
+                        height:32,
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      description,
-                      style: TextStyle(
+                      Text(
+                        title,
+                        style: TextStyle(
                           fontFamily: "myfont",
-                          fontSize: 14.5,
-                          color: Colors.grey[600]),
-                    ),
-                    
-                  ],
+                          fontSize: 22,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        description,
+                        style: TextStyle(
+                            fontFamily: "myfont",
+                            fontSize: 14.5,
+                            color: Colors.grey[600]),
+                      ),
+                      
+                    ],
+                  ),
                 ),
               ),
             ],
