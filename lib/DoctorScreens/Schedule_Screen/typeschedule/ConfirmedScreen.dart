@@ -1,25 +1,23 @@
 import 'package:eye_scan/components/AppoinmentCard.dart';
+import 'package:eye_scan/components/Canceled%20Card.dart';
 import 'package:eye_scan/components/maincolor.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class UpcomingPage extends StatefulWidget {
-  const UpcomingPage({super.key});
+class ConfirmedPage extends StatefulWidget {
+  const ConfirmedPage({super.key});
 
   @override
-  State<UpcomingPage> createState() => _UpcomingPageState();
+  State<ConfirmedPage> createState() => _CanceledScreenState();
 }
 
-class _UpcomingPageState extends State<UpcomingPage> {
+class _CanceledScreenState extends State<ConfirmedPage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(height: 10,),
-            Container(
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(height: 10,),
+          Container(
             width: 400,
             height: 55,
             child: Card(
@@ -78,19 +76,20 @@ class _UpcomingPageState extends State<UpcomingPage> {
             ),
           ),
 
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(itemBuilder: (context,index)
-                {
-                  return AppointmentCard(avatarColor: Color(0xff7BEB78), NameofPerson: 'Dr.Omar Hassan', Position: 'eye disease', ImgPath:'assetes/doctor _ rectangle.png', ButtonColor:maincolorblue, ButtonText: 'Reschedule', RequestStatus: 'confirmed',);
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView.builder(itemBuilder: (context,index)
+              {
+                return AppointmentCard(avatarColor:Color(0xff7BEB78), NameofPerson: 'Heba salah',
+                  Position: 'first visiting',
+                  ImgPath: 'assetes/request card img.png', ButtonColor: maincolorgrey, ButtonText: 'confirm', RequestStatus: 'confirmed',);
 
-                }),
-              ),
+              }),
             ),
-            
-          ],
-        ),
+          ),
+
+        ],
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:eye_scan/DoctorScreens/Schedule_Screen/Schedule-screen.dart';
 import 'package:eye_scan/DoctorScreens/chat_screens/chatlist_doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -21,7 +22,7 @@ class _DoctorNavState extends State<DoctorNav> {
   int page = 0;
   List<Widget> list = [
     const DocHome(),
-    const DoctorSchedule(),
+    const ScheduleScreens(),
     const ScanPage(),
     ChatListDoctor(),
     const DocProfileScreen(),
