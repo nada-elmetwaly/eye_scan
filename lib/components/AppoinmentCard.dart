@@ -18,10 +18,10 @@ class _AppointmentItemState extends State<AppointmentCard> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration:BoxDecoration(
-          color: Color(0xffFBFDFD),
+          color: Color(0xffFBFCFD),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: Color(0xffEAF6F6)
+            color: Color(0xffD8E8F2)
           )
         ),
         width: 327,
@@ -33,7 +33,7 @@ class _AppointmentItemState extends State<AppointmentCard> {
             children: [
               Row(
                 children: [
-                  Image(image: AssetImage('assetes/doctor _ rectangle.png')),
+                  Image(image: AssetImage('assetes/doc2 rectangle.png')),
                   SizedBox(width: 10,),
                   Column(
 

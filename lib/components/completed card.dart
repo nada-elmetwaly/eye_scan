@@ -15,7 +15,7 @@ class _CompletedCardState extends State<CompletedCard> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: 327,
-        height: 60,
+        height: 65,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: Color(0xffFBFDFD),

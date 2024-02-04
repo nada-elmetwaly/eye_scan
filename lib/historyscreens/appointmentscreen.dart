@@ -46,12 +46,12 @@ class _HistoryAppoState extends State<HistoryAppointPage> {
               ),
               tabs: [
             Tab(
-              child: Text('Upcoming',style: TextStyle(fontSize: 14)
+              child: Text('Upcoming',style: TextStyle(fontSize: 14,fontFamily: 'myfont')
                 ,
               ),
             ),
-            Tab(child: Text('Completed'),),
-            Tab(child: Text('Canceled'),),
+            Tab(child: Text('Completed',style: TextStyle(fontSize: 14,fontFamily: 'myfont')),),
+            Tab(child: Text('Canceled',style: TextStyle(fontSize: 14,fontFamily: 'myfont')),),
           ]) ,
         ),
         body: TabBarView(

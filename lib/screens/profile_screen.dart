@@ -1,4 +1,7 @@
 import 'package:eye_scan/components/ProfileItem.dart';
+import 'package:eye_scan/historyscreens/Record_screen.dart';
+import 'package:eye_scan/historyscreens/appointmentscreen.dart';
+import 'package:eye_scan/payments/appointment_screen.dart';
 import 'package:eye_scan/screens/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +101,9 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 27),
               child: ProfileItem(
                 imagepath: 'assetes/solar_battery-low-outline.jpg',
-                onclick: () {},
+                onclick: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HistoryAppointPage()));
+                },
                 label: 'Appointment history',
                 widthofarrow: 50,
               ),
@@ -118,7 +123,9 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 27),
               child: ProfileItem(
                 imagepath: 'assetes/record.png',
-                onclick: () {},
+                onclick: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecordScreen()));
+                },
                 label: 'Records history',
                 widthofarrow: 100,
               ),

@@ -1,6 +1,4 @@
 import 'package:eye_scan/LoginScreens/login.dart';
-import 'package:eye_scan/LoginScreensDoctor/signup_1.dart';
-import 'package:eye_scan/Notifications/without_notification.dart';
 import 'package:eye_scan/historyscreens/appointmentscreen.dart';
 import 'package:eye_scan/onBoarding/onBoarding.dart';
 import 'package:eye_scan/payments/appointment_screen.dart';
