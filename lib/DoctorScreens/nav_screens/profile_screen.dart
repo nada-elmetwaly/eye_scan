@@ -5,6 +5,7 @@ import '../../HistoryScreensD/history.dart';
 import '../../components/ProfileItem.dart';
 import '../../patientScreen/historyscreens/Record_screen.dart';
 import '../../patientScreen/historyscreens/appointmentscreen.dart';
+import '../Schedule_Screen/Doctor_Schedule.dart';
 import '../Schedule_Screen/Edit_Schedule.dart';
 import '../edit_profile_sceens/edit_profile_screen.dart';
 
@@ -148,7 +149,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               padding: const EdgeInsets.only(left: 35),
               child: GestureDetector(
                 onTap: (){ Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => EditSchedule()));},
+                    context, MaterialPageRoute(builder: (context) => DoctorSchedule()));},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
