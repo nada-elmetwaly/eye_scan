@@ -17,17 +17,17 @@ class IntroThree extends StatelessWidget {
                 child: Image.asset("assets/images/splash33.png")) ,
                 
                         Text(
-                          " Eye Diseases Recognition",
+                          " Chat",
                           style: TextStyle(
                             fontFamily: "myfont",
                             fontSize: 22,
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 13,
                         ),
                         Text(
-                          "Recognize about the disease at its beginning.",
+                          "Easily communicate with each other.",
                           style: TextStyle(
                               fontFamily: "myfont",
                               fontSize: 14.5,

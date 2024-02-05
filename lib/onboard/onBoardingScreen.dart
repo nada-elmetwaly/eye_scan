@@ -129,7 +129,7 @@ class _onboardingState extends State<onboarding> {
                       : GestureDetector(
                           onTap: () {
                             _controller.nextPage(
-                                duration: Duration(milliseconds:700),
+                                duration: Duration(milliseconds:500),
                                 curve: Curves.easeIn);
                           },
                           child: SizedBox(

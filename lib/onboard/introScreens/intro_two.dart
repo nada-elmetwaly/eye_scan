@@ -20,7 +20,7 @@ class IntroTwo extends StatelessWidget {
                           height:14,
                         ),
                         Text(
-                          " Eye Diseases Recognition",
+                          " Appointment with doctors ",
                           style: TextStyle(
                             fontFamily: "myfont",
                             fontSize: 22,
@@ -30,7 +30,7 @@ class IntroTwo extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          "Recognize about the disease at its beginning.",
+                          "You can easily book an appointment with a suitable doctor.",
                           style: TextStyle(
                               fontFamily: "myfont",
                               fontSize: 14.5,
