@@ -45,231 +45,233 @@ class _EditEduScreenState extends State<EditEduScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 90),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CountryCodePicker(
-                initialSelection: 'Eg',
-                showCountryOnly: true,
-                showDropDownButton: true,
-                showOnlyCountryWhenClosed: true,
-                alignLeft: true,
-
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: CountryCodePicker(
+                  initialSelection: 'Eg',
+                  showCountryOnly: true,
+                  showDropDownButton: true,
+                  showOnlyCountryWhenClosed: true,
+                  alignLeft: true,
+          
+                ),
               ),
-            ),
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: TextField(
-                obscureText: false,
-                decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(top: 9),
-                      child: DropdownButton<String>(
-                        underline: Container(
-                          color: Colors.white,
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: TextField(
+                  obscureText: false,
+                  decoration: InputDecoration(
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: DropdownButton<String>(
+                          underline: Container(
+                            color: Colors.white,
+                          ),
+                          value: dropdownvalue,
+                          icon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xff787676),
+                          ),
+                          items: [
+                            DropdownMenuItem<String>(
+                                value: 'one',
+                                child: Text(
+                                  'Master',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+                            DropdownMenuItem<String>(
+                                value: 'two',
+                                child: Text(
+                                  'Ph.D',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+                          ],
+                          onChanged: (String? value) {
+                            setState(() {
+                              dropdownvalue = value!;
+                            });
+                          },
                         ),
-                        value: dropdownvalue,
-                        icon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xff787676),
-                        ),
-                        items: [
-                          DropdownMenuItem<String>(
-                              value: 'one',
-                              child: Text(
-                                'Master',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-                          DropdownMenuItem<String>(
-                              value: 'two',
-                              child: Text(
-                                'Ph.D',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-                        ],
-                        onChanged: (String? value) {
-                          setState(() {
-                            dropdownvalue = value!;
-                          });
-                        },
                       ),
-                    ),
-
-                    hintText: 'Degree',
-                    hintStyle: TextStyle(
+          
+                      hintText: 'Degree',
+                      hintStyle: TextStyle(
+                          color: Color(0xFF263238),
+                          fontSize: 16,
+                          fontFamily: "myfont",
+                          ),
+                      border: InputBorder.none),
+                ),
+              ),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: TextField(
+                  obscureText: false,
+                  decoration: InputDecoration(
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: DropdownButton<String>(
+                          underline: Container(
+                            color: Colors.white,
+                          ),
+                          value: dropdownvalue,
+                          icon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xff787676),
+                          ),
+                          items: [
+                            DropdownMenuItem<String>(
+                                value: 'one',
+                                child: Text(
+                                  'Harvard',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+                            DropdownMenuItem<String>(
+                                value: 'two',
+                                child: Text(
+                                  'Jhon',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+          
+          
+                          ],
+                          onChanged: (String? value) {
+                            setState(() {
+                              dropdownvalue = value!;
+                            });
+                          },
+                        ),
+                      ),
+          
+                      hintText: 'University',
+                      hintStyle: TextStyle(
                         color: Color(0xFF263238),
                         fontSize: 16,
                         fontFamily: "myfont",
-                        ),
-                    border: InputBorder.none),
-              ),
-            ),
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: TextField(
-                obscureText: false,
-                decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(top: 9),
-                      child: DropdownButton<String>(
-                        underline: Container(
-                          color: Colors.white,
-                        ),
-                        value: dropdownvalue,
-                        icon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xff787676),
-                        ),
-                        items: [
-                          DropdownMenuItem<String>(
-                              value: 'one',
-                              child: Text(
-                                'Harvard',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-                          DropdownMenuItem<String>(
-                              value: 'two',
-                              child: Text(
-                                'Jhon',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-
-
-                        ],
-                        onChanged: (String? value) {
-                          setState(() {
-                            dropdownvalue = value!;
-                          });
-                        },
                       ),
-                    ),
-
-                    hintText: 'University',
-                    hintStyle: TextStyle(
-                      color: Color(0xFF263238),
-                      fontSize: 16,
-                      fontFamily: "myfont",
-                    ),
-                    border: InputBorder.none),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: TextField(
-                obscureText: false,
-                decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(top: 9),
-                      child: DropdownButton<String>(
-                        underline: Container(
-                          color: Colors.white,
-                        ),
-                        value: dropdownvalue,
-                        icon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xff787676),
-                        ),
-                        items: [
-                          DropdownMenuItem<String>(
-                              value: 'one',
-                              child: Text(
-                                '2021',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-                          DropdownMenuItem<String>(
-                              value: 'two',
-                              child: Text(
-                                '2022',
-                                style: TextStyle(color: Color(0xff787676)),
-                              )),
-
-
-                        ],
-                        onChanged: (String? value) {
-                          setState(() {
-                            dropdownvalue = value!;
-                          });
-                        },
-                      ),
-                    ),
-
-                    hintText: 'Year',
-                    hintStyle: TextStyle(
-                      color: Color(0xFF263238),
-                      fontSize: 16,
-                      fontFamily: "myfont",
-                    ),
-                    border: InputBorder.none),
-              ),
-            ),
-            SizedBox(height: 49,),
-            Padding(
-              padding: const EdgeInsets.only(left:24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Certification photo ',
-                    style: TextStyle(
-                      color: Color(0xFF263238),
-                      fontSize: 16,
-                      fontFamily: 'myfont',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                    ),
-                  ),
-                  SizedBox(height: 4,),
-                  GestureDetector(
-                    onTap: (){
-                      _pickImageFromGallery();
-                    },
-                    child: Container(
-                      width: 169,
-                      height: 35,
-                      decoration: ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFF73B8EB)),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 20,
-                            height: 20,
-                            decoration: ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(width: 1, color: Color(0xFF73B8EB)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            child: Center(child: Icon(Icons.add,color:Color(0xFF73B8EB) ,size: 16,)),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: TextField(
+                  obscureText: false,
+                  decoration: InputDecoration(
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(top: 9),
+                        child: DropdownButton<String>(
+                          underline: Container(
+                            color: Colors.white,
                           ),
-                          SizedBox(width: 1.5,),
-                          Text(
-                            'Add certificate photo',
-                            style: TextStyle(
-                              color: Color(0xFF73B8EB),
-                              fontSize: 14,
-                              fontFamily: 'myfont',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
-                          )
-                        ],
+                          value: dropdownvalue,
+                          icon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xff787676),
+                          ),
+                          items: [
+                            DropdownMenuItem<String>(
+                                value: 'one',
+                                child: Text(
+                                  '2021',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+                            DropdownMenuItem<String>(
+                                value: 'two',
+                                child: Text(
+                                  '2022',
+                                  style: TextStyle(color: Color(0xff787676)),
+                                )),
+          
+          
+                          ],
+                          onChanged: (String? value) {
+                            setState(() {
+                              dropdownvalue = value!;
+                            });
+                          },
+                        ),
+                      ),
+          
+                      hintText: 'Year',
+                      hintStyle: TextStyle(
+                        color: Color(0xFF263238),
+                        fontSize: 16,
+                        fontFamily: "myfont",
+                      ),
+                      border: InputBorder.none),
+                ),
+              ),
+              SizedBox(height: 49,),
+              Padding(
+                padding: const EdgeInsets.only(left:24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Certification photo ',
+                      style: TextStyle(
+                        color: Color(0xFF263238),
+                        fontSize: 16,
+                        fontFamily: 'myfont',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
                     ),
-                  )
-                ],
-              ),
-            )
-
-          ],
+                    SizedBox(height: 4,),
+                    GestureDetector(
+                      onTap: (){
+                        _pickImageFromGallery();
+                      },
+                      child: Container(
+                        width: 169,
+                        height: 35,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF73B8EB)),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: ShapeDecoration(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(width: 1, color: Color(0xFF73B8EB)),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              child: Center(child: Icon(Icons.add,color:Color(0xFF73B8EB) ,size: 16,)),
+                            ),
+                            SizedBox(width: 1.5,),
+                            Text(
+                              'Add certificate photo',
+                              style: TextStyle(
+                                color: Color(0xFF73B8EB),
+                                fontSize: 14,
+                                fontFamily: 'myfont',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+          
+            ],
+          ),
         ),
       ),
 
