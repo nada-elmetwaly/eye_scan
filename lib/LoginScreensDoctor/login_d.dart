@@ -5,6 +5,7 @@ import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
 import 'package:eye_scan/LoginScreens/signup.dart';
 import 'package:eye_scan/LoginScreens/welcome.dart';
 import 'package:eye_scan/LoginScreensDoctor/signup_1.dart';
+import 'package:eye_scan/LoginScreensDoctor/welcome.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
@@ -142,7 +143,7 @@ class _LoginDState extends State<LoginD> {
                        
                         if (_formKey.currentState!.validate()) {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Welcome()));
+                              builder: (context) => WelcomeD()));
                         }
                       },
                       text: "Login",

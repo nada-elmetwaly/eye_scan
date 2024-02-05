@@ -1,3 +1,5 @@
+import 'package:eye_scan/HistoryScreensD/components/recordCard.dart';
+import 'package:eye_scan/components/historyCard.dart';
 import 'package:flutter/material.dart';
 
 class RecordsTab extends StatelessWidget {
@@ -8,7 +10,7 @@ class RecordsTab extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text("data")
+         RecordCard()
         ],
       ),
     );

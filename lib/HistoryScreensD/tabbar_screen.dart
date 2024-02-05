@@ -25,7 +25,6 @@ class _AppointmentState extends State<Appointment> {
             child: Column(
               
               children: [
-                
             Row(
               children: [
                 
@@ -33,12 +32,10 @@ class _AppointmentState extends State<Appointment> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(Icons.arrow_back_ios)),
+                    icon: Icon(Icons.arrow_back_ios , color: Color(0xff333333),)),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+           
             Image.asset(
               "assets/images/Ellipse 74.png",
             ),

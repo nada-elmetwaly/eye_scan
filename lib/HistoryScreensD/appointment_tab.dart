@@ -13,7 +13,7 @@ class AppointmentTab extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 50,),
+              SizedBox(height: 40,),
               AppoinBox(day: "Sunday",) , 
               SizedBox(height: 17, ) ,
               AppoinBox(day: "Sunday",) , 

@@ -18,7 +18,7 @@ class Historyd extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(
-                      width: 35,
+                      width: 22,
                     ),
                     IconButton(
                         onPressed: () {
@@ -26,7 +26,7 @@ class Historyd extends StatelessWidget {
                         },
                         icon: Icon(Icons.arrow_back_ios)),
                     SizedBox(
-                      width:80,
+                      width:82,
                     ),
                     Text("History" , style: TextStyle(
                       fontSize: 29 , fontFamily: "myfont" , letterSpacing: 1.5

@@ -59,10 +59,11 @@ class _HistoryBoxState extends State<HistoryBox> {
               fontSize: 18 , 
               fontFamily: "myfont"
             ),)
-            ) , 
+            ) ,
+            
             Positioned(
               left: 100,
-              top: 31,
+              top: 33,
               child: Text(widget.disease , style: TextStyle(
                 color: Color(0xffADADAD) , 
                 fontFamily: "myfont" , 
