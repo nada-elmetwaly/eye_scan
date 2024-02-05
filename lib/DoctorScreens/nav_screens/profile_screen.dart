@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../HistoryScreensD/history.dart';
 import '../../components/ProfileItem.dart';
 import '../../patientScreen/historyscreens/Record_screen.dart';
 import '../../patientScreen/historyscreens/appointmentscreen.dart';
@@ -115,7 +116,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               child: ProfileItem(
                 imagepath: 'assetes/record.png',
                 onclick: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecordScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Historyd()));
                 },
                 label: 'Records history',
                 widthofarrow: 100,
