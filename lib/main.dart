@@ -1,10 +1,10 @@
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
 import 'package:eye_scan/DoctorScreens/Schedule_Screen/Doctor_Schedule.dart';
+import 'package:eye_scan/HistoryScreensD/history.dart';
 import 'package:eye_scan/LoginScreens/login.dart';
 import 'package:eye_scan/components/historyCard.dart';
-import 'package:eye_scan/onBoarding/SplashCont.dart';
 
-import 'package:eye_scan/onBoarding/onBoarding.dart';
+import 'package:eye_scan/onboard/onBoardingScreen.dart';
 import 'package:eye_scan/payments/appointment_screen.dart';
 import 'package:eye_scan/screens/chat_screen.dart';
 import 'package:eye_scan/screens/profile_screen.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home:DoctorNav(),
+      home:  onboarding()
       
     );
   }

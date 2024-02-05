@@ -1,27 +1,16 @@
-import 'dart:ui';
-
 import 'package:eye_scan/components/custom-button.dart';
 import 'package:eye_scan/components/maincolor.dart';
 import 'package:eye_scan/components/shared_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppointmentCard extends StatefulWidget {
-  Color?avatarColor;
-  String?NameofPerson;
-  String?RequestStatus;
-  String?Position;
-  String?ButtonText;
-  String?ImgPath;
-  Color?ButtonColor;
-   AppointmentCard({super.key,required this.avatarColor,required this.NameofPerson,required this.Position,required this.ImgPath,required this.ButtonColor,required this.ButtonText,required this.RequestStatus});
+class RequestCard extends StatefulWidget {
+  const RequestCard({super.key});
 
   @override
-  State<AppointmentCard> createState() => _AppointmentItemState();
+  State<RequestCard> createState() => _AppointmentItemState();
 }
 
-class _AppointmentItemState extends State<AppointmentCard> {
-
+class _AppointmentItemState extends State<RequestCard > {
   bool?isReschdule=false;
   @override
   Widget build(BuildContext context) {
@@ -29,11 +18,11 @@ class _AppointmentItemState extends State<AppointmentCard> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration:BoxDecoration(
-          color: Color(0xffFBFCFD),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: Color(0xffD8E8F2)
-          )
+            color: Color(0xffFBFDFD),
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+                color: Color(0xffEAF6F6)
+            )
         ),
         width: 327,
         height: 230,
@@ -44,14 +33,14 @@ class _AppointmentItemState extends State<AppointmentCard> {
             children: [
               Row(
                 children: [
-                  Image(image:AssetImage(widget.ImgPath!)),
+                  Image(image: AssetImage('assetes/request card img.png')),
                   SizedBox(width: 10,),
                   Column(
 
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                      widget.NameofPerson!,
+                        'Heba Salah',
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 20,
@@ -61,7 +50,7 @@ class _AppointmentItemState extends State<AppointmentCard> {
                         ),
                       ),
                       Text(
-                        widget.Position!,
+                        'first visiting',
                         style: TextStyle(
                           color: maincolorgrey,
                           fontSize: 12,
@@ -122,7 +111,7 @@ class _AppointmentItemState extends State<AppointmentCard> {
                     ),
                   ),
                   Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                    mainAxisAlignment: MainAxisAlignment.start ,
 
                     children: [
                       Row(
@@ -141,6 +130,7 @@ class _AppointmentItemState extends State<AppointmentCard> {
                           ),
                         ],
                       ),
+                      SizedBox(width: 90,),
                       Row(
                         children: [
                           Icon(Icons.watch_later_outlined,color: maincolorgrey,size: 14,),
@@ -157,27 +147,12 @@ class _AppointmentItemState extends State<AppointmentCard> {
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          CircleAvatar(backgroundColor:widget.avatarColor ,radius: 5,),
-                          SizedBox(width: 5,),
-                          Text(
-                            widget.RequestStatus!,
-                            style: TextStyle(
-                              color:maincolorgrey,
-                              fontSize: 12,
-                              fontFamily: "myfont",
 
-                              height: 0,
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   )
                 ],
               ),
-              SizedBox(height: 5,),
+              SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -185,14 +160,14 @@ class _AppointmentItemState extends State<AppointmentCard> {
                     width: 144,
                     height: 46,
                     decoration: BoxDecoration(
-                      borderRadius:BorderRadius.circular(8) ,
-                      border: Border.all(
-                        color: Colors.blue
-                      )
+                        borderRadius:BorderRadius.circular(8) ,
+                        border: Border.all(
+                            color: Colors.blue
+                        )
                     ),
                     child: MaterialButton(onPressed: (){},
                       child:
-                    Text(
+                      Text(
                         'Cancel',
                         style: TextStyle(
                           color: maincolorblue,
@@ -201,21 +176,23 @@ class _AppointmentItemState extends State<AppointmentCard> {
                           fontWeight: FontWeight.w700,
                           height: 0,
                         ),
-                    ),
+                      ),
                     ),
                   ),
                   Container(
                     width: 144,
                     height: 46,
                     decoration: BoxDecoration(
-                      color:widget.ButtonColor,
+                        color: maincolorblue,
                         borderRadius:BorderRadius.circular(8) ,
-
+                        border: Border.all(
+                            color: Colors.blue
+                        )
                     ),
                     child: MaterialButton(onPressed: (){},
                       child:
                       Text(
-                        widget.ButtonText!,
+                        'Confirm',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
