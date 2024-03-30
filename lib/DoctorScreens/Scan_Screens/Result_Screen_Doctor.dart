@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
+import 'package:eye_scan/DoctorScreens/nav_screens/doc_home_screen.dart';
 import 'package:eye_scan/components/maincolor.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:eye_scan/screens/home_screen.dart';
@@ -124,7 +125,7 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                     )
                 ),
                 child: MaterialButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Test()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DocHome()));
                 },
                   child:
                   Text(

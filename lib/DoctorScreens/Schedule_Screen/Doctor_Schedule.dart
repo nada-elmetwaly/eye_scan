@@ -35,7 +35,7 @@ class _DoctorScheduleState extends State<DoctorSchedule> {
                 Icons.arrow_back_ios_new,
                 color: Color(0xff333333),
               ),
-              onTap: () {},
+              onTap: () {Navigator.pop(context);},
             ),
             const SizedBox(
               width: 120,

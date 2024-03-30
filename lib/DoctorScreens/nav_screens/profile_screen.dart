@@ -142,36 +142,16 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               height: 5,
             ),
 
-            SizedBox(
-              height: 5,
-            ),
+
             Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: GestureDetector(
-                onTap: (){ Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => DoctorSchedule()));},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    PhosphorIcon(
-                      PhosphorIcons.calendarPlus(),
-                      color: Color(0xff73B8EB),
-                    ),
-                    SizedBox(width: 7,),
-                    Text(
-                      ' Schedule management ',
-                      style: TextStyle(
-                        color: Color(0xFF575757),
-                        fontSize: 18,
-                        fontFamily: 'myfont',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
-                    ),
-                    SizedBox(width: 99,),
-                    Icon(Icons.arrow_forward_ios_outlined,color: Color(0xFF575757) ,),
-                  ],
-                ),
+              padding: const EdgeInsets.only(left:28),
+              child: ProfileItem(
+                imagepath: 'assetes/schedule.png',
+                onclick: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorSchedule()));
+                },
+                label: 'Schedule Management',
+                widthofarrow: 20,
               ),
             ),
             SizedBox(
