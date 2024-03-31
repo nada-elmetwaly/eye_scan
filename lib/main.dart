@@ -1,7 +1,7 @@
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
 import 'package:eye_scan/DoctorScreens/Schedule_Screen/Doctor_Schedule.dart';
 import 'package:eye_scan/HistoryScreensD/history.dart';
-import 'package:eye_scan/LoginScreens/login.dart';
+import 'package:eye_scan/LoginScreensPatient/login.dart';
 import 'package:eye_scan/components/historyCard.dart';
 
 import 'package:eye_scan/onboard/onBoardingScreen.dart';

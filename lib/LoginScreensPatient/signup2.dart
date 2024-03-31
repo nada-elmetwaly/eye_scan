@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:io';
 
 import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
@@ -10,14 +8,14 @@ import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class SignUpThree extends StatefulWidget {
-  const SignUpThree({super.key});
+class SignUptwo extends StatefulWidget {
+  const SignUptwo({super.key});
 
   @override
-  State<SignUpThree> createState() => _SignUpThreeState();
+  State<SignUptwo> createState() => _SignUptwoState();
 }
 
-class _SignUpThreeState extends State<SignUpThree> {
+class _SignUptwoState extends State<SignUptwo> {
   File? _image ;
   Future? getImage(bool isCamera) async {
     File image ;
@@ -77,7 +75,7 @@ class _SignUpThreeState extends State<SignUpThree> {
                         ),
                       ) ,
                       SizedBox(height: 10,) , 
-                      Text("3/3" , style: TextStyle(
+                      Text("2/2" , style: TextStyle(
                         fontSize: 15 , 
                         fontWeight: FontWeight.bold
                       ),) ,
@@ -99,7 +97,7 @@ class _SignUpThreeState extends State<SignUpThree> {
                       SizedBox(height: 50,), 
                       Padding(
                         padding: EdgeInsets.only(left: 25  ,right: 30),
-                        child: Text("Upload photo of your professional practice license " , style: TextStyle(
+                        child: Text("Upload Photo " , style: TextStyle(
                           color: Color(0xff787676) , 
                           fontSize: 18 , 
                           fontFamily: "myfont"

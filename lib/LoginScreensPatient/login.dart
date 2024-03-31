@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 
-import 'package:eye_scan/LoginScreens/password_forget.dart';
-import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
-import 'package:eye_scan/LoginScreens/signup.dart';
-import 'package:eye_scan/LoginScreens/welcome.dart';
+import 'package:eye_scan/LoginScreensPatient/password_forget.dart';
+import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
+import 'package:eye_scan/LoginScreensPatient/signup.dart';
+import 'package:eye_scan/LoginScreensPatient/welcome.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';

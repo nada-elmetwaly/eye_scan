@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:eye_scan/DoctorScreens/nav_bar_screen.dart';
-import 'package:eye_scan/LoginScreens/widgets/box.dart';
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/box.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:eye_scan/screens/home_screen.dart';

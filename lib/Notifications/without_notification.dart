@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

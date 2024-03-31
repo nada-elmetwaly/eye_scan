@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/payments/payment_plans_ann.dart';
 import 'package:flutter/cupertino.dart';

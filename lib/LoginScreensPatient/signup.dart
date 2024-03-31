@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_new
 
-import 'package:eye_scan/LoginScreens/login.dart';
-import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
+import 'package:eye_scan/LoginScreensPatient/login.dart';
+import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
+import 'package:eye_scan/LoginScreensPatient/signup2.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SignUp extends StatefulWidget {
@@ -51,6 +53,30 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 30,
                   ),
+                 
+
+          
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: LinearPercentIndicator(
+                          animation: true,
+                          animationDuration: 1000 ,
+                          lineHeight: 6,
+                          percent: 0.5,
+                          barRadius: Radius.circular(16),
+                          progressColor: Color(0xff75C2F6),
+                          backgroundColor: Color(0xffDADADA),
+                          width: 372,
+                        ),
+                      ) ,
+                      SizedBox(height: 10,) , 
+                      Text("1/2" , style: TextStyle(
+                        fontSize: 15 , 
+                        fontWeight: FontWeight.bold
+                      ),) ,
+                      SizedBox(height: 19,) ,
+                      
+
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40.0,
@@ -268,12 +294,14 @@ class _SignUpState extends State<SignUp> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         print("successful");
+                        Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignUptwo()));
                         return;
                       } else {
                         print("UnSuccessfull");
                       }
                     },
-                    text: "Sign Up",
+                    text: "Next",
                   ),
                   SizedBox(
                     height: 18,

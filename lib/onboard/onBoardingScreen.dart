@@ -1,4 +1,4 @@
-import 'package:eye_scan/LoginScreens/acc_type.dart';
+import 'package:eye_scan/LoginScreensPatient/acc_type.dart';
 import 'package:eye_scan/onboard/introScreens/intro_one.dart';
 import 'package:eye_scan/onboard/introScreens/intro_three.dart';
 import 'package:eye_scan/onboard/introScreens/intro_two.dart';

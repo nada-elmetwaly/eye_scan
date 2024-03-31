@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:eye_scan/LoginScreens/shared_style/field_style.dart';
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/LoginScreensDoctor/signup_3.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:flutter/material.dart';

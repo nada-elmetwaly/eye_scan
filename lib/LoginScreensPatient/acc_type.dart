@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:eye_scan/LoginScreens/login.dart';
-import 'package:eye_scan/LoginScreens/widgets/acc_box.dart';
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/login.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/acc_box.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/LoginScreensDoctor/login_d.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/cupertino.dart';

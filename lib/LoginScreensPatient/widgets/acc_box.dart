@@ -1,4 +1,4 @@
-import 'package:eye_scan/LoginScreens/login.dart';
+import 'package:eye_scan/LoginScreensPatient/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

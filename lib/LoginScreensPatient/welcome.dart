@@ -1,10 +1,15 @@
-import 'package:eye_scan/LoginScreens/login.dart';
-import 'package:eye_scan/LoginScreens/widgets/box.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:eye_scan/LoginScreensPatient/widgets/box.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/components/customButton.dart';
+import 'package:eye_scan/dynamicPage.dart';
+import 'package:eye_scan/screens/home_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AfterCreate extends StatelessWidget {
-  const AfterCreate({super.key});
+class Welcome extends StatelessWidget {
+  const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +22,13 @@ class AfterCreate extends StatelessWidget {
               SizedBox(
                 height: 80,
               ),
-              CommonBox(text: "Success", desc: "You have been successfully reset your password") ,
+              CommonBox(text: "Welcome back", desc: "Your log in has been successfully") ,
               
               CustomButton(
-                  text: "Login",
+                  text: "Go to home",
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Login()));
+                        MaterialPageRoute(builder: (context) => Test()));
                   })
             ],
           ),

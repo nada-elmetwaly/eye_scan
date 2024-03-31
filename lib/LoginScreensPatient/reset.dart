@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:eye_scan/LoginScreens/createPass.dart';
-import 'package:eye_scan/LoginScreens/widgets/common_text.dart';
-import 'package:eye_scan/LoginScreens/widgets/desc.dart';
+import 'package:eye_scan/LoginScreensPatient/createPass.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
+import 'package:eye_scan/LoginScreensPatient/widgets/desc.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:flutter/material.dart';
 
