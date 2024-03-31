@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../HistoryScreensD/history.dart';
 import '../../components/ProfileItem.dart';
 import '../../patientScreen/historyscreens/Record_screen.dart';
 import '../../patientScreen/historyscreens/appointmentscreen.dart';
+import '../Schedule_Screen/Doctor_Schedule.dart';
 import '../Schedule_Screen/Edit_Schedule.dart';
 import '../edit_profile_sceens/edit_profile_screen.dart';
 
@@ -115,7 +117,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               child: ProfileItem(
                 imagepath: 'assetes/record.png',
                 onclick: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecordScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Historyd()));
                 },
                 label: 'Records history',
                 widthofarrow: 100,
@@ -140,36 +142,16 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               height: 5,
             ),
 
-            SizedBox(
-              height: 5,
-            ),
+
             Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: GestureDetector(
-                onTap: (){ Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => EditSchedule()));},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    PhosphorIcon(
-                      PhosphorIcons.calendarPlus(),
-                      color: Color(0xff73B8EB),
-                    ),
-                    SizedBox(width: 7,),
-                    Text(
-                      ' Schedule management ',
-                      style: TextStyle(
-                        color: Color(0xFF575757),
-                        fontSize: 18,
-                        fontFamily: 'myfont',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
-                    ),
-                    SizedBox(width: 99,),
-                    Icon(Icons.arrow_forward_ios_outlined,color: Color(0xFF575757) ,),
-                  ],
-                ),
+              padding: const EdgeInsets.only(left:28),
+              child: ProfileItem(
+                imagepath: 'assetes/schedule.png',
+                onclick: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorSchedule()));
+                },
+                label: 'Schedule Management',
+                widthofarrow: 20,
               ),
             ),
             SizedBox(

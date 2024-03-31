@@ -56,7 +56,7 @@ class RecordCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(
-                        width: 92,
+                        width: 82,
                       ),
                       ElevatedButton(
                         onPressed: () {

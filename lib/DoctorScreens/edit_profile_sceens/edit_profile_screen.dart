@@ -86,11 +86,15 @@ class _State extends State<DocEditProfile> {
             children: [
               Stack(
                 children: [
-                  const CircleAvatar(
-                    backgroundImage: AssetImage('assetes/PROFILE USER.png'),
-                    backgroundColor: Colors.transparent,
-                    radius: 100,
-                  ),
+                   _image!=null?CircleAvatar(
+                     backgroundImage: MemoryImage(_image!),
+                     backgroundColor: Colors.transparent,
+                     radius: 100,
+                   ):CircleAvatar(
+                     backgroundImage: AssetImage('assetes/PROFILE USER.png'),
+                     backgroundColor: Colors.transparent,
+                     radius: 100,
+                   ),
                   Positioned(
                     top: 130,
                     left: 150,

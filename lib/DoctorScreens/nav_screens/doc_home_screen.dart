@@ -255,11 +255,12 @@ class _DocHomeState extends State<DocHome> {
                     ),
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 2,),
                       PhosphorIcon(PhosphorIcons.calendar(),color: Color(0xFF73B8EB),),
                       Text(
-                        '20 appointments',
+                        '20 appointment',
                         style: TextStyle(
                           color: Color(0xFF73B8EB),
                           fontSize: 10,
