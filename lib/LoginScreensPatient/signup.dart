@@ -1,14 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_new
 
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:eye_scan/LoginScreensPatient/login.dart';
 import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
-import 'package:eye_scan/LoginScreensPatient/signup2.dart';
 import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -20,6 +21,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  Uint8List? _image ;
+
+File? selectedImage;
+
   final _formKey = GlobalKey<FormState>();
   TextEditingController password = TextEditingController();
   TextEditingController confirmpassword = TextEditingController();
@@ -53,28 +58,31 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
                     height: 30,
                   ),
-                 
+                 Center(
+                  child: Stack(
+                    children: [
+                      _image!= null?
+                      CircleAvatar(
+                        radius: 70,
+                        backgroundImage: MemoryImage(_image!)
+                      ) : CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("assets/images/camera.png"),
+                      ) ,
+                      Positioned(
+                        bottom: -0,
+                        left: 100,
+                        child: IconButton(
+                        onPressed: (){
+                          showImagePickerOption(context);
+                        }, icon: const Icon(Icons.add_a_photo)))
+                    ],
+                  ),
+                 ) ,
+                 SizedBox(height: 30,) ,
 
           
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: LinearPercentIndicator(
-                          animation: true,
-                          animationDuration: 1000 ,
-                          lineHeight: 6,
-                          percent: 0.5,
-                          barRadius: Radius.circular(16),
-                          progressColor: Color(0xff75C2F6),
-                          backgroundColor: Color(0xffDADADA),
-                          width: 372,
-                        ),
-                      ) ,
-                      SizedBox(height: 10,) , 
-                      Text("1/2" , style: TextStyle(
-                        fontSize: 15 , 
-                        fontWeight: FontWeight.bold
-                      ),) ,
-                      SizedBox(height: 19,) ,
+                     
                       
 
                   Padding(
@@ -295,13 +303,13 @@ class _SignUpState extends State<SignUp> {
                       if (_formKey.currentState!.validate()) {
                         print("successful");
                         Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignUptwo()));
+                              builder: (context) => Login()));
                         return;
                       } else {
                         print("UnSuccessfull");
                       }
                     },
-                    text: "Next",
+                    text: "Register",
                   ),
                   SizedBox(
                     height: 18,
@@ -394,7 +402,76 @@ class _SignUpState extends State<SignUp> {
         ),
       ),
     );
-  }
 
+
+  }
+void showImagePickerOption(BuildContext context){
+showModalBottomSheet(
+   
   
+  context: context, builder: (builder){
+  return Padding(
+    padding: const EdgeInsets.all(18.0),
+    child: SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height/4.5,
+      child: Row(
+        children: [
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                _pickImageFromGallery();
+              },
+              child: SizedBox(
+                child: Column(
+                  children: [
+                    Icon(Icons.image, size: 70,) ,
+                    Text("Gallery")
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                _pickImageFromCamera();
+              },
+              child: SizedBox(
+                child: Column(
+                  children: [
+                    Icon(Icons.camera_alt , size: 70,) ,
+                    Text("Camera")
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+
+});
+}
+//Gallery
+  Future _pickImageFromGallery()async{
+    final returnImage = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if(returnImage == null) return;
+    setState(() {
+      selectedImage = File(returnImage.path);
+      _image = File(returnImage.path).readAsBytesSync();
+    });
+    Navigator.of(context).pop();
+  }
+  //camera
+  Future _pickImageFromCamera()async{
+    final returnImage = await ImagePicker().pickImage(source: ImageSource.camera);
+    if(returnImage == null) return;
+    setState(() {
+      selectedImage = File(returnImage.path);
+      _image = File(returnImage.path).readAsBytesSync();
+    });
+    Navigator.of(context).pop(); //close modal sheet
+  }
 }
