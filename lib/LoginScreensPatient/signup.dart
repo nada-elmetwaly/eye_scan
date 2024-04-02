@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({super.key});
@@ -21,13 +22,41 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  Uint8List? _image ;
-
-File? selectedImage;
-
   final _formKey = GlobalKey<FormState>();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController confirmpassword = TextEditingController();
+
+
+  Future<void> setEmail() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('email', emailController.text);
+  }
+  Future<void> setname() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('name', nameController.text);
+  }
+  Future<void> setphone() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('phone', phoneController.text);
+  }
+  Future<void> setpassword() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('password', password.text);
+  }
+  Future<void> setConfirmpassword() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('confirmPassword', confirmpassword.text);
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+
+  }
 
   bool isChecked = false;
   bool passToggle = true;
@@ -90,12 +119,14 @@ File? selectedImage;
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller: nameController,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/User-Outline.png", "any name"),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return " Please Enter name ";
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -107,6 +138,7 @@ File? selectedImage;
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller: emailController,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/sms.png", "Email") ,
                       validator: (value) {
@@ -242,6 +274,7 @@ File? selectedImage;
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller: phoneController,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/Call.png", "Phone Number") ,
                       keyboardType: TextInputType.number,

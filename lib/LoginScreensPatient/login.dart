@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 
+import 'dart:convert';
+
 import 'package:eye_scan/LoginScreensPatient/password_forget.dart';
 import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
 import 'package:eye_scan/LoginScreensPatient/signup.dart';
@@ -10,6 +12,7 @@ import 'package:eye_scan/components/square_tile.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:http/http.dart'as http;
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -19,11 +22,35 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   final _formKey = GlobalKey<FormState>();
 
   
   bool passToggle = true;
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
+  Future<void> _login() async {
+    final url = 'https://laravel.investtradegm.com/api/patient/login';
+    final phone = _phoneController.text;
+    final password = _passwordController.text;
+
+    final response = await http.post(Uri.parse(url), body: {
+      'phone':phone,
+      'password': password,
+    });
+
+    if (response.statusCode == 200) {
+      final responseData = json.decode(response.body);
+      Navigator.of(context).push(MaterialPageRoute(
+
+          builder: (context) => Welcome()));
+      print('Login successful');
+    } else {
+
+      print('Failed to login. Error: ${response.reasonPhrase}');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,6 +81,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: TextFormField(
+                        controller: _phoneController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         keyboardType: TextInputType.number,
                         obscureText: false,
@@ -74,6 +102,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: TextFormField(
+                        controller: _passwordController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           obscureText: passToggle,
                           decoration: InputDecoration(
@@ -140,8 +169,10 @@ class _LoginState extends State<Login> {
                       onPressed: () {
                        
                         if (_formKey.currentState!.validate()) {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Welcome()));
+                          _login();
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //
+                          //     builder: (context) => Welcome()));
                         }
                       },
                       text: "Login",

@@ -25,36 +25,8 @@ class _State extends State<DocEditProfile> {
   Uint8List? _image;
   File? selectedimg;
   String dropdownvalue = 'one';
-  String? email = "";
-  String? phone = "";
-  String? name = "";
 
-  Future<void> getEmail() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    email = prefs.getString('email') ?? '';
-    setState(() {});
-  }
 
-  Future<void> getName() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    name = prefs.getString('signUser') ?? '';
-    setState(() {});
-  }
-
-  Future<void> getPhone() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    phone = prefs.getString('phone') ?? '';
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getEmail();
-    getName();
-    getPhone();
-  }
 
   @override
   Widget build(BuildContext context) {
