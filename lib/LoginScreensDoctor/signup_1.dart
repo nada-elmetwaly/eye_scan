@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpOne extends StatefulWidget {
   SignUpOne({super.key});
@@ -22,12 +23,34 @@ class SignUpOne extends StatefulWidget {
 
 class _SignUpOneState extends State<SignUpOne> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController password = TextEditingController();
-  TextEditingController confirmpassword = TextEditingController();
-
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   bool isChecked = false;
   bool passToggle = true;
-
+  Future<void>setName()async
+  {
+    final SharedPreferences prefs=await SharedPreferences.getInstance();
+    prefs.setString('name', nameController.text);
+  }
+  Future<void> setEmail() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', emailController.text);
+  }
+  Future<void> setPassword() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('password',passwordController.text);
+  }
+  Future<void> setConfirmPassword() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('confirmPassword',confirmPasswordController.text);
+  }
+  Future<void> setPhone() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('phone',phoneController.text);
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -89,6 +112,7 @@ class _SignUpOneState extends State<SignUpOne> {
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller:nameController ,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/User-Outline.png" , "any name"),
                       validator: (value) {
@@ -106,6 +130,7 @@ class _SignUpOneState extends State<SignUpOne> {
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller: emailController,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/sms.png", "Email") ,
                       validator: (value) {
@@ -125,7 +150,7 @@ class _SignUpOneState extends State<SignUpOne> {
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
-                      controller: password,
+                      controller: passwordController,
                       obscureText: passToggle,
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
@@ -183,7 +208,7 @@ class _SignUpOneState extends State<SignUpOne> {
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
-                      controller: confirmpassword,
+                      controller: confirmPasswordController,
                       obscureText: passToggle,
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
@@ -224,9 +249,9 @@ class _SignUpOneState extends State<SignUpOne> {
                         if (value!.isEmpty) {
                           return 'Please re-enter password';
                         }
-                        print(password.text);
-                        print(confirmpassword.text);
-                        if (password.text != confirmpassword.text) {
+                        print(passwordController.text);
+                        print(confirmPasswordController.text);
+                        if (passwordController.text != confirmPasswordController.text) {
                           return "Password does not match";
                         }
                         return null;
@@ -241,6 +266,7 @@ class _SignUpOneState extends State<SignUpOne> {
                       horizontal: 40.0,
                     ),
                     child: TextFormField(
+                      controller: phoneController,
                       obscureText: false,
                       decoration: buildInputDecoration("assets/images/Call.png", "Phone Number") ,
                       keyboardType: TextInputType.number,
@@ -300,6 +326,11 @@ class _SignUpOneState extends State<SignUpOne> {
                   CustomButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+                        setEmail();
+                        setName();
+                        setPassword();
+                        setConfirmPassword();
+                        setPhone();
                         print("successful");
                         Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => SignUpTwo()));
