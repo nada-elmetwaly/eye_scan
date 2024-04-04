@@ -62,6 +62,17 @@ if (response.statusCode == 200) {
 print('Registration successful');
 Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
 } else {
+  showDialog(context: context, builder: (BuildContext context)
+  {
+    return AlertDialog(
+      title: Text('Register failed'),
+      actions: [
+        TextButton(onPressed: (){
+          Navigator.of(context).pop();
+        }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+      ],
+    );
+  });
     print('Failed to register. Error: ${response.reasonPhrase}');
 }
 }

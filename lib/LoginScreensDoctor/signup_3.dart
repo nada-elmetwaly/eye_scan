@@ -94,7 +94,18 @@ class _SignUpThreeState extends State<SignUpThree> {
       print('Registration successful');
       Navigator.push(context, MaterialPageRoute(builder: (context) => LoginD()));
     } else {
-      print('Failed to register. Error: ${response.reasonPhrase}');
+      // print('Failed to register. Error: ${response.reasonPhrase}');
+      showDialog(context: context, builder: (BuildContext context)
+      {
+        return AlertDialog(
+          title: Text('Register failed'),
+          actions: [
+            TextButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+          ],
+        );
+      });
     }
   }
   @override
@@ -208,7 +219,7 @@ class _SignUpThreeState extends State<SignUpThree> {
                         print(clinicLocation);
                         _register();
                       }) ,
-                      _image == null? Container() : Image.file(_image! , height: 300, width: 300,)
+
             ],
           ),
         ),

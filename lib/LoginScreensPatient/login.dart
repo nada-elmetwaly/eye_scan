@@ -12,7 +12,7 @@ import 'package:eye_scan/components/square_tile.dart';
 import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:http/http.dart'as http;
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -22,10 +22,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   final _formKey = GlobalKey<FormState>();
 
-  
   bool passToggle = true;
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -36,21 +34,33 @@ class _LoginState extends State<Login> {
     final password = _passwordController.text;
 
     final response = await http.post(Uri.parse(url), body: {
-      'phone':phone,
+      'phone': phone,
       'password': password,
     });
 
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
-      Navigator.of(context).push(MaterialPageRoute(
 
-          builder: (context) => Welcome()));
-      print('Login successful');
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Welcome()));
+        print('Login successful');
+
     } else {
+      showDialog(context: context, builder: (BuildContext context)
+      {
+        return AlertDialog(
+          title: Text('Login Failed Email or Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
 
-      print('Failed to login. Error: ${response.reasonPhrase}');
+          actions: [
+            TextButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+          ],
+        );
+      });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -85,12 +95,12 @@ class _LoginState extends State<Login> {
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         keyboardType: TextInputType.number,
                         obscureText: false,
-                        decoration: buildInputDecoration("assets/images/Call.png", "Enter your phone") ,
+                        decoration: buildInputDecoration(
+                            "assets/images/Call.png", "Enter your phone"),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Please enter your phone number';
                           }
-                           
 
                           return null;
                         },
@@ -102,7 +112,7 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: TextFormField(
-                        controller: _passwordController,
+                          controller: _passwordController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           obscureText: passToggle,
                           decoration: InputDecoration(
@@ -121,7 +131,8 @@ class _LoginState extends State<Login> {
                               ),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(16)),
-                              prefixIcon: Image.asset("assets/images/Password.png") ,
+                              prefixIcon:
+                                  Image.asset("assets/images/Password.png"),
                               suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
@@ -167,7 +178,6 @@ class _LoginState extends State<Login> {
                     ),
                     CustomButton(
                       onPressed: () {
-                       
                         if (_formKey.currentState!.validate()) {
                           _login();
                           // Navigator.of(context).push(MaterialPageRoute(

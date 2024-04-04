@@ -46,7 +46,18 @@ class _LoginDState extends State<LoginD> {
       print('Login successful');
     } else {
 
-      print('Failed to login. Error: ${response.reasonPhrase}');
+      showDialog(context: context, builder: (BuildContext context)
+      {
+        return AlertDialog(
+          title: Text('Login Failed Email or Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
+
+          actions: [
+            TextButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+          ],
+        );
+      });
     }
   }
   bool passToggle = true;
