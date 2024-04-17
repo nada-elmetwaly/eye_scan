@@ -17,13 +17,7 @@ class AppointmentScreen extends StatefulWidget {
 }
 
 class _AppointmentScreenState extends State<AppointmentScreen> {
-  CalendarFormat _format=CalendarFormat.month;
-  DateTime _focusDay = DateTime.now();
-  DateTime _currentDay = DateTime.now();
-  int? _currentIndex;
-  bool _isWeekend = false;
-  bool _dateSelected = false;
-  bool _timeSelected = false;
+
 
   @override
   Widget build(BuildContext context) {
