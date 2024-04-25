@@ -12,9 +12,12 @@ import 'package:eye_scan/components/customButton.dart';
 import 'package:eye_scan/components/custom_field.dart';
 import 'package:eye_scan/components/square_tile.dart';
 import 'package:eye_scan/dynamicPage.dart';
+import 'package:eye_scan/providers/authtokeenprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginD extends StatefulWidget {
   LoginD({super.key});
@@ -25,10 +28,11 @@ class LoginD extends StatefulWidget {
 
 class _LoginDState extends State<LoginD> {
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
+  String?name;
+  String?email;
+  Map<String, dynamic> profileData = {};
   Future<void> _login() async {
     final url = 'https://laravel.investtradegm.com/api/doctor/login';
     final phone = _phoneController.text;
@@ -41,9 +45,17 @@ class _LoginDState extends State<LoginD> {
 
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
+      String authtoken=responseData["token"];
+
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('authtoken', authtoken);
+      Provider.of<Authtokenprovider>(context,listen: false).setAuthToken(authtoken);
+
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => WelcomeD()));
       print('Login successful');
+
+
     } else {
 
       showDialog(context: context, builder: (BuildContext context)
@@ -60,9 +72,18 @@ class _LoginDState extends State<LoginD> {
       });
     }
   }
+  Future<void> setDoctorName() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('DoctorName', name!);
+  }
   bool passToggle = true;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -177,11 +198,12 @@ class _LoginDState extends State<LoginD> {
                       height: 23,
                     ),
                     CustomButton(
-                      onPressed: () {
+                      onPressed: ()  {
                        
                         if (_formKey.currentState!.validate()) {
-                         _login();
-                        }
+                          _login();
+
+                        };
                       },
                       text: "Login",
                     ),

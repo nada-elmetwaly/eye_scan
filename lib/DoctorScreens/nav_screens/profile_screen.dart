@@ -1,5 +1,11 @@
+import 'dart:convert';
+
+import 'package:eye_scan/LoginScreensDoctor/login_d.dart';
+import 'package:eye_scan/providers/authtokeenprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../HistoryScreensD/history.dart';
 import '../../components/ProfileItem.dart';
@@ -8,8 +14,10 @@ import '../../patientScreen/historyscreens/appointmentscreen.dart';
 import '../Schedule_Screen/Doctor_Schedule.dart';
 import '../Schedule_Screen/Edit_Schedule.dart';
 import '../edit_profile_sceens/edit_profile_screen.dart';
+import 'package:http/http.dart' as http;
 
 class DocProfileScreen extends StatefulWidget {
+
   const DocProfileScreen({super.key});
 
   @override
@@ -17,31 +25,69 @@ class DocProfileScreen extends StatefulWidget {
 }
 
 class _DocProfileScreenState extends State<DocProfileScreen> {
+
+  late  String? _doctorName="";
+  late  String? _userEmail="";
+   dynamic _doctorId="";
+
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _fetchProfile();
+  }
+
+  Future<void> _fetchProfile() async {
+    Uri url = Uri.parse('https://laravel.investtradegm.com/api/doctor/profile');
+    final response = await http.get(url, headers: {
+      "Authorization":"Bearer 90|91QmIKHErWewLZgfDNORvup7k9QT7ODappeQUOwQ5765c809"
+    });
+
+    if (response.statusCode == 200) {
+
+      Map<String, dynamic> profileData = json.decode(response.body);
+      setState(() {
+
+        _doctorName=profileData["data"][0]["name"];
+        _userEmail=profileData["data"][0]["email"];
+        _doctorId=profileData["data"][0]["id"];
+      });
+    } else {
+      throw Exception('Failed to load profile data');
+    }
+  }
+
+
+
+
+  @override
+
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'My Profile',
+        'My Profile',
           style: TextStyle(
               color: Colors.black, fontSize: 24, fontFamily: 'myfont'),
         ),
         actions: [
           InkWell(
-            onTap: ()
-            {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DocEditProfile()));
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DocEditProfile()));
             },
             child: Image(
-                width: 50, height: 50, image: AssetImage('assetes/user-edit.jpg')),
+                width: 50,
+                height: 50,
+                image: AssetImage('assetes/user-edit.jpg')),
           )
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-
           children: [
             SizedBox(
               height: 10,
@@ -59,7 +105,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Dr.Sam',
+                      _doctorName!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -72,7 +118,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
                       height: 8,
                     ),
                     Text(
-                      'ANYNAME@gmail.com',
+                      _userEmail!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -100,7 +146,10 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               child: ProfileItem(
                 imagepath: 'assetes/solar_battery-low-outline.jpg',
                 onclick: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HistoryAppointPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HistoryAppointPage()));
                 },
                 label: 'Appointment history',
                 widthofarrow: 50,
@@ -117,7 +166,8 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
               child: ProfileItem(
                 imagepath: 'assetes/record.png',
                 onclick: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Historyd()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Historyd()));
                 },
                 label: 'Records history',
                 widthofarrow: 100,
@@ -141,14 +191,15 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
             SizedBox(
               height: 5,
             ),
-
-
             Padding(
-              padding: const EdgeInsets.only(left:28),
+              padding: const EdgeInsets.only(left: 28),
               child: ProfileItem(
                 imagepath: 'assetes/schedule.png',
                 onclick: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorSchedule()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DoctorSchedule()));
                 },
                 label: 'Schedule Management',
                 widthofarrow: 20,
@@ -163,22 +214,27 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image(image: AssetImage('assetes/logout.png')),
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginD()));
+
+
+
+                    },
                     child: Text(
                       'Log out',
                       style: TextStyle(
                           color: Color(0xffE90064),
                           fontFamily: 'myfont',
-                          fontSize: 18
-                      ),
+                          fontSize: 18),
                     ),
                   )
                 ],
               ),
             ),
-
           ],
         ),
       ),

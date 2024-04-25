@@ -6,15 +6,22 @@ import 'package:eye_scan/components/historyCard.dart';
 
 import 'package:eye_scan/onboard/onBoardingScreen.dart';
 import 'package:eye_scan/payments/appointment_screen.dart';
+import 'package:eye_scan/providers/authtokeenprovider.dart';
+import 'package:eye_scan/providers/doctorProfileProvider.dart';
 import 'package:eye_scan/screens/chat_screen.dart';
 import 'package:eye_scan/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'DoctorScreens/nav_bar_screen.dart';
 import 'dynamicPage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      ChangeNotifierProvider(create: (BuildContext context) {
+        return Authtokenprovider();
+      },
+      child:MyApp()));
 }
 
 class MyApp extends StatelessWidget {
