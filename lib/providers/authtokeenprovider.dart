@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 
 class Authtokenprovider extends ChangeNotifier
 {
@@ -7,5 +8,8 @@ class Authtokenprovider extends ChangeNotifier
   Future<void>setAuthToken(String token)async{
     _authtoken=token;
     notifyListeners();
+  }
+  static Authtokenprovider of(BuildContext context, {bool listen = true}) {
+    return Provider.of<Authtokenprovider>(context, listen: listen);
   }
 }

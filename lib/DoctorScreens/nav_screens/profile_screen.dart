@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+
 import 'package:eye_scan/LoginScreensDoctor/login_d.dart';
 import 'package:eye_scan/providers/authtokeenprovider.dart';
 import 'package:flutter/material.dart';
@@ -29,18 +30,19 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
   late  String? _doctorName="";
   late  String? _userEmail="";
    dynamic _doctorId="";
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _fetchProfile();
+late String token="";
+  Future<void> getToken() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    token= prefs.getString('authtoken') ?? '';
+    setState(() {});
+    await fetchProfile(token);
   }
 
-  Future<void> _fetchProfile() async {
+  Future<void> fetchProfile(String token) async {
+
     Uri url = Uri.parse('https://laravel.investtradegm.com/api/doctor/profile');
     final response = await http.get(url, headers: {
-      "Authorization":"Bearer 90|91QmIKHErWewLZgfDNORvup7k9QT7ODappeQUOwQ5765c809"
+      "Authorization":"Bearer $token"
     });
 
     if (response.statusCode == 200) {
@@ -61,14 +63,21 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
 
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getToken();
+    fetchProfile(token);
+  }
 
+  @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-        'My Profile',
+       'My Profile',
           style: TextStyle(
               color: Colors.black, fontSize: 24, fontFamily: 'myfont'),
         ),
@@ -123,7 +132,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           fontSize: 14,
-                          fontFamily: 'myfont',
+                          fontFamily: 'msfont',
                           color: Color(0xff979797)),
                     ),
                   ],
@@ -218,10 +227,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
                     width: 5,
                   ),
                   InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginD()));
-
-
+                    onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginD()));
 
                     },
                     child: Text(
