@@ -13,6 +13,8 @@ import 'package:eye_scan/dynamicPage.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -40,24 +42,39 @@ class _LoginState extends State<Login> {
 
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
+      String authtoken=responseData["token"];
 
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Welcome()));
-        print('Login successful');
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('authTokenPatient', authtoken);
 
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Welcome()));
+      print('Login successful');
     } else {
-      showDialog(context: context, builder: (BuildContext context)
-      {
-        return AlertDialog(
-          title: Text('Login Failed Email or Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
-
-          actions: [
-            TextButton(onPressed: (){
-              Navigator.of(context).pop();
-            }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
-          ],
-        );
-      });
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(
+                'Login Failed Email or Password is wrong',
+                style: TextStyle(
+                    fontSize: 20, color: Colors.black, fontFamily: 'myfont'),
+              ),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      'OK',
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Color(0xff75C2F6),
+                          fontFamily: 'myfont'),
+                    ))
+              ],
+            );
+          });
     }
   }
 
