@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:eye_scan/components/table_calender.dart';
 import 'package:eye_scan/main.dart';
 import 'package:eye_scan/models/booking_dateTime.dart';
@@ -16,6 +15,7 @@ import '../widgets/price_time_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:buttons_flutter/buttons_flutter.dart';
 import 'package:group_button/group_button.dart';
+
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({super.key});
@@ -41,7 +41,8 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    //final doctor=ModalRoute.of(context)!.settings as Map;
+   //final doctor=ModalRoute.of(context)!.settings as Map;
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -77,6 +78,8 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
             ),
             Center(
               child: GroupButton(
+                
+
                 options: GroupButtonOptions(borderRadius:BorderRadius.circular(15),selectedTextStyle: TextStyle(fontWeight: FontWeight.w400,
                   height: 0,fontFamily: 'myfont',fontSize: 14,color: Colors.white),
                   selectedColor: Color(0xFF73B8EB),
@@ -89,7 +92,11 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                       height: 0,fontFamily: 'myfont',fontSize: 14,color: Color(0xFF333333),),
                   ),
                  controller: GroupButtonController(selectedIndex:selected_day ),
+                  onSelected: (value, selected_day, isSelected) =>{
+                    DataConverted.getDay(selected_day!)
+                  } ,
                   buttons: ['Saturday','Sunday','Monday','Thursday','Wednesday','Tuesday']),
+             
             ),
 
             SizedBox(
@@ -119,6 +126,9 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
 
                     ),
                   controller: GroupButtonController(selectedIndex:selected_time ),
+                  onSelected: (value,selected_time , isSelected) =>{
+                    DataConverted.getTime(selected_time!),
+                  } ,
                     buttons: ['2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'],
 
                 ),
@@ -202,9 +212,13 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
             Center(
               child: GestureDetector(
                 onTap: () async {
-                  final getDay=DataConverted.getDay(selected_day!);
-                  final getTime=DataConverted.getTime(selected_time!);
+                   final getDay=DataConverted.getDay(selected_day!);
+                   final getTime=DataConverted.getTime(selected_time!);
+                  print(token);
+                  print(getDay);
                   final booking =await AppointmentService(Dio()).bookAppointment(getDay, getTime, token!) ;
+
+
                   if(booking ==200){
                     print('success_booking');
 

@@ -12,6 +12,7 @@ class AppointmentService{
         options: Options(headers: {'Authorization':'Bearer $token'})
     );
     if(response.statusCode ==200 && response.data != 'data'){
+
       return response.statusCode;
     }
     else{
