@@ -165,10 +165,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
                         //if data is loading
                         case ConnectionState.waiting:
                         case ConnectionState.none:
-                        // return const Center(
-                        //     child: CircularProgressIndicator());
-
-                        //if some or all data is loaded then show it
+                        
                         case ConnectionState.active:
                         case ConnectionState.done:
                           final data = snapshot.data?.docs;
@@ -192,7 +189,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
                                 });
                           } else {
                             return const Center(
-                              child: Text('No Connections Found!',
+                              child: Text('No Chats Found !',
                                   style: TextStyle(fontSize: 20)),
                             );
                           }
