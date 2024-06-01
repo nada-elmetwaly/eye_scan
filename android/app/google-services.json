@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "565051408421",
+    "project_id": "we-chat-a6606",
+    "storage_bucket": "we-chat-a6606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565051408421:android:f4dc8f7035d00d7ade3fcc",
+        "android_client_info": {
+          "package_name": "com.example.eye_scan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565051408421-mpl19nj4ijasopd0lrrlk0d6gaub6k1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eye_scan",
+            "certificate_hash": "0ba3b68302430c20a6ce343531aec2690c926687"
+          }
+        },
+        {
+          "client_id": "565051408421-f5a81odlu3jodbfjttmceakanj1rilg6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJbHJ50Mu-TMN3515jTfU1qzKrOWQF26s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565051408421-f5a81odlu3jodbfjttmceakanj1rilg6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
