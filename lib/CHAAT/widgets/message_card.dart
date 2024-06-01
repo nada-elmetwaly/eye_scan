@@ -51,8 +51,8 @@ class _MessageCardState extends State<MessageCard> {
             margin: EdgeInsets.symmetric(
                 horizontal: mq.width * .04, vertical: mq.height * .01),
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 221, 245, 255),
-                border: Border.all(color: Colors.lightBlue),
+                color: const Color.fromARGB(255, 87, 91, 94),
+                border: Border.all(color: Colors.transparent),
                 //making borders curved
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -63,7 +63,7 @@ class _MessageCardState extends State<MessageCard> {
                 //show text
                 Text(
                     widget.message.msg,
-                    style: const TextStyle(fontSize: 15, color: Colors.black87),
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )
                 :
                 //show image
@@ -118,7 +118,7 @@ class _MessageCardState extends State<MessageCard> {
             Text(
               MyDateUtil.getFormattedTime(
                   context: context, time: widget.message.sent),
-              style: const TextStyle(fontSize: 13, color: Colors.black54),
+              style: const TextStyle(fontSize: 14, color: Colors.black54),
             ),
           ],
         ),
@@ -132,8 +132,8 @@ class _MessageCardState extends State<MessageCard> {
             margin: EdgeInsets.symmetric(
                 horizontal: mq.width * .04, vertical: mq.height * .01),
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 218, 255, 176),
-                border: Border.all(color: Colors.lightGreen),
+                color:  Color(0xff73B8EB) ,
+                border: Border.all(color: Colors.transparent),
                 //making borders curved
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -144,7 +144,7 @@ class _MessageCardState extends State<MessageCard> {
                 //show text
                 Text(
                     widget.message.msg,
-                    style: const TextStyle(fontSize: 15, color: Colors.black87),
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )
                 :
                 //show image

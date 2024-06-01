@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home:LoginScreen2(),
+      home:onboarding(),
 
 
     );

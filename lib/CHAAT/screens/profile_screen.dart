@@ -13,7 +13,6 @@ import '../api/apis.dart';
 import '../models/chat_user.dart';
 import 'auth/login_screen.dart';
 
-//profile screen -- to show signed in user info
 class ProfileScreen extends StatefulWidget {
   final ChatUser user;
 
@@ -66,8 +65,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     });
                   });
                 },
-                icon: const Icon(Icons.logout),
-                label: const Text('Logout')),
+                icon: const Icon(Icons.logout , color: Colors.black,),
+                label: const Text('Logout' , style: TextStyle(color: Colors.white , fontSize: 17),)),
           ),
 
           //body
@@ -254,7 +253,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           if (mounted) Navigator.pop(context);
                         }
                       },
-                      child: Image.asset('images/add_image.png')),
+                      child: Image.asset('assetes/add_image.png')),
 
                   //take picture from camera button
                   ElevatedButton(
@@ -280,7 +279,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           if (mounted) Navigator.pop(context);
                         }
                       },
-                      child: Image.asset('images/camera.png')),
+                      child: Image.asset('assetes/camera.png')),
                 ],
               )
             ],

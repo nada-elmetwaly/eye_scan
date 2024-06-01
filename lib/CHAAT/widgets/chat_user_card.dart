@@ -11,7 +11,6 @@ import '../models/message.dart';
 
 import 'dialogs/profile_dialog.dart';
 
-//card to represent a single user in home screen
 class ChatUserCard extends StatefulWidget {
   final ChatUser user;
 

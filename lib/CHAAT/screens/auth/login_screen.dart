@@ -101,7 +101,8 @@ class _LoginScreen2State extends State<LoginScreen2> {
       //app bar
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Welcome to We Chat'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
 
       //body
@@ -122,7 +123,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
             height: mq.height * .06,
             child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 223, 255, 187),
+                    backgroundColor: const Color.fromARGB(255, 188, 228, 255).withOpacity(0.6),
                     shape: const StadiumBorder(),
                     elevation: 1),
 
@@ -137,10 +138,10 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   text: const TextSpan(
                       style: TextStyle(color: Colors.black, fontSize: 16),
                       children: [
-                        TextSpan(text: 'Login with '),
+                        TextSpan(text: 'Login with ' , style: TextStyle(fontWeight: FontWeight.bold)),
                         TextSpan(
                             text: 'Google',
-                            style: TextStyle(fontWeight: FontWeight.w500)),
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ]),
                 ))),
       ]),
