@@ -5,7 +5,6 @@
 import FlutterMacOS
 import Foundation
 
-<<<<<<< HEAD
 import cloud_firestore
 import emoji_picker_flutter
 import file_selector_macos
@@ -34,14 +33,4 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   PathProviderPlugin.register(with: registry.registrar(forPlugin: "PathProviderPlugin"))
   SharedPreferencesPlugin.register(with: registry.registrar(forPlugin: "SharedPreferencesPlugin"))
   SqflitePlugin.register(with: registry.registrar(forPlugin: "SqflitePlugin"))
-=======
-import emoji_picker_flutter
-import file_selector_macos
-import shared_preferences_foundation
-
-func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  EmojiPickerFlutterPlugin.register(with: registry.registrar(forPlugin: "EmojiPickerFlutterPlugin"))
-  FileSelectorPlugin.register(with: registry.registrar(forPlugin: "FileSelectorPlugin"))
-  SharedPreferencesPlugin.register(with: registry.registrar(forPlugin: "SharedPreferencesPlugin"))
->>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
 }

@@ -8,10 +8,7 @@ buildscript {
     dependencies {
         // AGP version is set in settings.gradle.
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-<<<<<<< HEAD
         classpath 'com.google.gms:google-services:4.3.5'
-=======
->>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
     }
 }
 
