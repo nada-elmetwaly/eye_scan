@@ -2,7 +2,10 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+<<<<<<< HEAD
     id "com.google.gms.google-services"
+=======
+>>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
 }
 
 def localProperties = new Properties()
@@ -25,7 +28,11 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.eye_scan"
+<<<<<<< HEAD
     compileSdkVersion 34
+=======
+    compileSdk flutter.compileSdkVersion
+>>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -46,8 +53,13 @@ android {
         applicationId "com.example.eye_scan"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+<<<<<<< HEAD
         minSdkVersion 23
         targetSdkVersion 33
+=======
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
+>>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -65,6 +77,10 @@ flutter {
     source '../..'
 }
 
+<<<<<<< HEAD
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
 }
+=======
+dependencies {}
+>>>>>>> 5d9a5c17ed4f747f845f0d0bcb2b6bf79989aa1d
