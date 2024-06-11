@@ -29,6 +29,7 @@ class _DocProfileScreenState extends State<DocProfileScreen> {
 
   late  String? _doctorName="";
   late  String? _userEmail="";
+  late String? _imgLink="";
    dynamic _doctorId="";
 late String token="";
   Future<void> getToken() async {
@@ -53,6 +54,7 @@ late String token="";
         _doctorName=profileData["data"][0]["name"];
         _userEmail=profileData["data"][0]["email"];
         _doctorId=profileData["data"][0]["id"];
+        _imgLink=profileData["data"][0]["image"];
       });
     } else {
       throw Exception('Failed to load profile data');
@@ -106,7 +108,7 @@ late String token="";
               children: [
                 CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('assetes/Ellipse 64.png')),
+                    backgroundImage: NetworkImage('https://laravel.investtradegm.com$_imgLink')),
                 const SizedBox(
                   height: 10,
                 ),

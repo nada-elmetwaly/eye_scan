@@ -45,23 +45,37 @@ class _LoginDState extends State<LoginD> {
 
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
-      String authtoken=responseData["token"];
+      if(responseData['message']=='Login Successfully')
+      {
+        String authtoken=responseData["token"];
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('authtoken', authtoken);
+        Provider.of<Authtokenprovider>(context,listen: false).setAuthToken(authtoken);
+        print('login yes');
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeD()));
+      }else {
 
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('authtoken', authtoken);
-      Provider.of<Authtokenprovider>(context,listen: false).setAuthToken(authtoken);
+          showDialog(context: context, builder: (BuildContext context)
+          {
+            return AlertDialog(
+              title: Text(' Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
 
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => WelcomeD()));
+              actions: [
+                TextButton(onPressed: (){
+                  Navigator.of(context).pop();
+                }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+              ],
+            );
+          });}
       print('Login successful');
 
 
-    } else {
+    } else if(response.statusCode == 422 ) {
 
       showDialog(context: context, builder: (BuildContext context)
       {
         return AlertDialog(
-          title: Text('Login Failed Email or Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
+          title: Text('The selected phone is invalid',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
 
           actions: [
             TextButton(onPressed: (){

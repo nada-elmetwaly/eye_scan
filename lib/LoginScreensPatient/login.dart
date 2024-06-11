@@ -16,6 +16,8 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../providers/authtokeenprovider.dart';
+
 class Login extends StatefulWidget {
   Login({super.key});
 
@@ -42,39 +44,45 @@ class _LoginState extends State<Login> {
 
     if (response.statusCode == 200) {
       final responseData = json.decode(response.body);
-      String authtoken=responseData["token"];
+      if(responseData['message']=='Login Successfully')
+      {
+        String authtoken=responseData["token"];
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('authtoken', authtoken);
+        Provider.of<Authtokenprovider>(context,listen: false).setAuthToken(authtoken);
+        print('login yes');
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Welcome()));
+      }else {
 
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('authTokenPatient', authtoken);
+        showDialog(context: context, builder: (BuildContext context)
+        {
+          return AlertDialog(
+            title: Text(' Password is wrong',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
 
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Welcome()));
+            actions: [
+              TextButton(onPressed: (){
+                Navigator.of(context).pop();
+              }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+            ],
+          );
+        });}
       print('Login successful');
-    } else {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text(
-                'Login Failed Email or Password is wrong',
-                style: TextStyle(
-                    fontSize: 20, color: Colors.black, fontFamily: 'myfont'),
-              ),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text(
-                      'OK',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xff75C2F6),
-                          fontFamily: 'myfont'),
-                    ))
-              ],
-            );
-          });
+
+
+    } else if(response.statusCode == 422 ) {
+
+      showDialog(context: context, builder: (BuildContext context)
+      {
+        return AlertDialog(
+          title: Text('The selected phone is invalid',style: TextStyle(fontSize: 20,color: Colors.black,fontFamily: 'myfont'),),
+
+          actions: [
+            TextButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, child:Text('OK',style: TextStyle(fontSize: 20,color: Color(0xff75C2F6),fontFamily: 'myfont'),))
+          ],
+        );
+      });
     }
   }
 

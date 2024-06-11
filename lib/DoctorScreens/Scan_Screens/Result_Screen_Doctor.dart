@@ -1,6 +1,11 @@
+import 'dart:convert';
+import 'dart:io';
+
+
 import 'dart:typed_data';
 
 import 'package:eye_scan/DoctorScreens/Scan_Screens/ScanScreen.dart';
+import 'package:eye_scan/DoctorScreens/nav_bar_screen.dart';
 import 'package:eye_scan/DoctorScreens/nav_screens/doc_home_screen.dart';
 import 'package:eye_scan/components/maincolor.dart';
 import 'package:eye_scan/dynamicPage.dart';
@@ -8,9 +13,10 @@ import 'package:eye_scan/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:http/http.dart'as http;
 
 class ResultScreenDoctor extends StatefulWidget {
-  Uint8List?img;
+  File?img;
   ResultScreenDoctor({super.key,required this.img});
 
   @override
@@ -18,7 +24,36 @@ class ResultScreenDoctor extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreenDoctor> {
+  late String? classname='';
+  late dynamic accuracy='';
+  Future<void> _AiModelScan() async {
+    final url = 'http://46.101.128.18:3000/predict';
+    final image =widget.img ;
+    var request = http.MultipartRequest('POST', Uri.parse(url));
+    request.files.add(await http.MultipartFile.fromPath('image', widget.img!.path));
+    var
+    streamedResponse = await request.send();
+    final response = await http.Response.fromStream(streamedResponse);
+
+    if (response.statusCode == 200) {
+      final responseData = json.decode(response.body);
+      setState(() {
+        classname=responseData["class_name"];
+        accuracy=responseData["confidence"];
+      });
+
+    }else
+    {
+      print('something wrong');
+    }
+  }
   @override
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _AiModelScan();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -64,14 +99,14 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                   Image(
                       width: 257,
                       height: 270,
-                      image: MemoryImage(widget.img!))
+                      image:FileImage(widget.img!))
                   ,
                 ],
               ),
               SizedBox(height: 40,),
               Row(
                 children: [
-                Text('The Result',style: TextStyle(fontSize: 24,fontFamily: 'myfont',color: Colors.black)),
+                Text('The Result is',style: TextStyle(fontSize: 24,fontFamily: 'myfont',color: Colors.black)),
               ],
               ),
               SizedBox(height: 18,),
@@ -80,10 +115,10 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                   Expanded(
                     child: Text(
         
-                      'Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti .',style: TextStyle(
+                     classname!,style: TextStyle(
                       color: maincolorgrey,
                       fontFamily: 'myfont',
-                      fontSize: 13,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold
                     ),),
                   )
@@ -125,7 +160,7 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
                     )
                 ),
                 child: MaterialButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DocHome()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorNav()));
                 },
                   child:
                   Text(

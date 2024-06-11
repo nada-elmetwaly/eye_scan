@@ -5,13 +5,10 @@ import 'package:eye_scan/LoginScreensPatient/shared_style/field_style.dart';
 import 'package:eye_scan/LoginScreensPatient/widgets/common_text.dart';
 import 'package:eye_scan/LoginScreensDoctor/signup_2.dart';
 import 'package:eye_scan/components/customButton.dart';
-import 'package:eye_scan/components/custom_field.dart';
-import 'package:eye_scan/components/square_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpOne extends StatefulWidget {

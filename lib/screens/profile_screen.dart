@@ -107,7 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   CircleAvatar(
                       radius: 35,
-                      backgroundImage: NetworkImage(_imgLink!)
+                      backgroundImage: NetworkImage('https://laravel.investtradegm.com$_imgLink')
                   ),
                   const SizedBox(
                     width: 10,

@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:http/http.dart'as http;
 import '../components/custom_field.dart';
 
 class UserProfile extends StatefulWidget {
@@ -26,7 +26,7 @@ class _ProfileScreenState extends State<UserProfile> {
   String? email = "";
   String? phone = "";
   String? name = "";
-
+  late String token="";
   Future<void> getEmail() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     email = prefs.getString('email') ?? '';
@@ -44,6 +44,37 @@ class _ProfileScreenState extends State<UserProfile> {
     phone = prefs.getString('phone') ?? '';
     setState(() {});
   }
+  Future<void> getToken() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    token= prefs.getString('authtoken') ?? '';
+    setState(() {});
+    await updateUserProfile(token);
+  }
+  Future<void> updateUserProfile(String token) async {
+    final apiUrl = 'https://your-api-url.com/update_profile.php'; // Replace with your actual API URL
+    final updatedData = {
+      'education': 'Bachelor of Science',
+      'gender': 'Female',
+      'birth_date': '1995-05-15',
+      'about': 'Passionate developer and lifelong learner.',
+    };
+
+    try {
+      final response = await http.post(Uri.parse(apiUrl), body: updatedData,headers: {
+            'Authorization':
+                'Bearer 28|Z65lUpvywD94CZTcogwEFawLQIIkzgWx2WHzSxSz494757ee'
+          });
+      if (response.statusCode == 200) {
+        // Profile updated successfully
+        print('Profile updated successfully');
+      } else {
+        // Handle error (e.g., display an error message)
+        print('Error updating profile: ${response.body}');
+      }
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
 
   @override
   void initState() {
@@ -52,6 +83,7 @@ class _ProfileScreenState extends State<UserProfile> {
     getEmail();
     getName();
     getPhone();
+    getToken();
   }
 
   @override
