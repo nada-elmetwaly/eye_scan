@@ -28,7 +28,7 @@ class _TestState extends State<Test> {
     const HomeScreen(),
     const SearchScreen(),
     const tipsScreen(),
-    ChatList(),
+    SplashScreen(),
     const ProfileScreen(),
   ];
 

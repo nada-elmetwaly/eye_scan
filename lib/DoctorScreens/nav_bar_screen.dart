@@ -24,7 +24,7 @@ class _DoctorNavState extends State<DoctorNav> {
     const DocHome(),
     const ScheduleScreens(),
     const ScanPage(),
-    ChatListDoctor(),
+    SplashScreen(),
     const DocProfileScreen(),
   ];
   @override
