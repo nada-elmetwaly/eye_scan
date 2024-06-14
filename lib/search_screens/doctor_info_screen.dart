@@ -1,14 +1,65 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../payments/appointment_screen.dart';
 import '../payments/payment_plans_mon.dart';
 import '../screens/search_screen.dart';
-
-class DocInfo extends StatelessWidget {
+import 'package:http/http.dart' as http;
+class DocInfo extends StatefulWidget {
   const DocInfo({super.key});
 
   @override
+  State<DocInfo> createState() => _DocInfoState();
+}
+
+class _DocInfoState extends State<DocInfo> {
+  late  String? _doctorName="";
+  late  String? _userEmail="";
+  dynamic _doctorId="";
+  late String? _imgLink="";
+  late String token="";
+  late String _fee="";
+  Future<void> getToken() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    token= prefs.getString('authtoken') ?? '';
+    setState(() {});
+    await DoctorsData(token);
+  }
+  Future<void> DoctorsData(String token) async {
+
+    Uri url = Uri.parse('https://laravel.investtradegm.com/api/doctor/profile');
+    final response = await http.get(url, headers: {
+      "Authorization":"Bearer $token"
+    });
+
+    if (response.statusCode == 200) {
+
+      Map<String, dynamic> doctorData = json.decode(response.body);
+      setState(() {
+
+        _doctorName=doctorData["data"][0]["name"];
+        _userEmail=doctorData["data"][0]["email"];
+        _doctorId=doctorData["data"][0]["id"];
+        _imgLink=doctorData["data"][0]["image"];
+        _fee=doctorData["data"][0]["fees"];
+      });
+    } else {
+      throw Exception('Failed to load profile data');
+    }
+  }
+  @override
+  @override
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    DoctorsData(token);
+    getToken();
+
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -27,7 +78,7 @@ class DocInfo extends StatelessWidget {
               height: 306,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assetes/d2.png'),
+                  image: NetworkImage('https://laravel.investtradegm.com$_imgLink'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -213,7 +264,7 @@ class DocInfo extends StatelessWidget {
 
                     children: [
                       Text(
-                        'Dr. Thomas',
+                        _doctorName!,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF333333),
@@ -227,7 +278,7 @@ class DocInfo extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 200,right: 10),
                         child: Text(
-                          '100EG',
+                          _fee,
                           style: TextStyle(
                             color: Color(0xFF73B8EB),
                             fontSize: 16,

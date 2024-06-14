@@ -1,17 +1,76 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../components/custom_doc_search.dart';
 import '../components/custom_rating.dart';
 import '../components/rate_component.dart';
 import '../dynamicPage.dart';
 import '../search_screens/filter_screen.dart';
+import 'package:http/http.dart'as http;
 
-class SearchScreen extends StatelessWidget {
+class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
   @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  late  String? _doctorName="";
+  late  String? _userEmail="";
+  dynamic _doctorId="";
+  late String? _imgLink="";
+  late String token="";
+  late String _fee="";
+  Future<void> getToken() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    token= prefs.getString('authtoken') ?? '';
+    setState(() {});
+    await DoctorsData(token);
+  }
+  
+  Future<void>setDoctorID()async
+  {
+    final SharedPreferences prefs=await SharedPreferences.getInstance();
+    prefs.setInt('DoctorId', _doctorId);
+  }
+
+  Future<void> DoctorsData(String token) async {
+
+    Uri url = Uri.parse('https://laravel.investtradegm.com/api/doctor/profile');
+    final response = await http.get(url, headers: {
+      "Authorization":"Bearer $token"
+    });
+
+    if (response.statusCode == 200) {
+
+      Map<String, dynamic> doctorData = json.decode(response.body);
+      setState(() {
+
+        _doctorName=doctorData["data"][0]["name"];
+        _userEmail=doctorData["data"][0]["email"];
+        _doctorId=doctorData["data"][0]["id"];
+        _imgLink=doctorData["data"][0]["image"];
+        _fee=doctorData["data"][0]["fees"];
+      });
+    } else {
+      throw Exception('Failed to load profile data');
+    }
+  }
+  @override
+  @override
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getToken();
+    DoctorsData(token);
+
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -92,7 +151,7 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-               
+
                 IconButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>FilterScreen()));
@@ -132,14 +191,13 @@ class SearchScreen extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
+            CustomDocSearch(img: 'assetes/doc2.png',name: _doctorName!,),
             CustomDocSearch(img: 'assetes/doc1.png',name: 'Dr. Aaron',),
-            CustomDocSearch(img: 'assetes/doc2.png',name: 'Dr. Lily',),
-            CustomDocSearch(img: 'assetes/doc3.png',name: 'Dr. Asow',),
-            CustomDocSearch(img: 'assetes/doc2.png',name: 'Dr. John',),
+
+
           ],
         ),
       ),
     );
   }
-
 }
