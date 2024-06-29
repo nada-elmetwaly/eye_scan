@@ -5,6 +5,7 @@ import 'package:eye_scan/DoctorScreens/chat_screens/chatlist_doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../CHAAT/screens/splash.dart';
 import 'Scan_Screens/ScanScreen.dart';
 import 'Schedule_Screen/Doctor_Schedule.dart';
 import 'nav_screens/doc_chat_screen.dart';
