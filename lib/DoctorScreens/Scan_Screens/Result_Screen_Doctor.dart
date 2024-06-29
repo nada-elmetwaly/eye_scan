@@ -27,7 +27,7 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
   late String? classname='';
   late dynamic accuracy='';
   Future<void> _AiModelScan() async {
-    final url = 'http://167.99.131.165:8080/predict';
+    const url = 'http://167.99.131.165:8080/predict';
     final image =widget.img ;
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(await http.MultipartFile.fromPath('image', widget.img!.path));
@@ -75,7 +75,7 @@ class _ResultScreenState extends State<ResultScreenDoctor> {
             const SizedBox(
               width: 120,
             ),
-            Text(
+            const Text(
               'Result',
               style: TextStyle(
                 fontFamily: 'myfont',
